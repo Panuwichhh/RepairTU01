@@ -6,7 +6,7 @@ function Test() {
 
   return (
     <>
-        <h1>Print</h1>
+        <h1>Print 101</h1>
     </>
   )
 }
