@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/head.css">
+    <link rel="stylesheet" href="../css/Add_infor.css">
+    <title>Information</title>
+</head>
+
+<body>
+    <!-- แทบด้านบน -->
+    <div class="head">
+        <div class="box_head"></div>
+        <h1 class="logo" id="name-1">REPAIR&nbsp;
+            <span class="logo" id="name-2">TU</span>
+        </h1>
+        <a  href="../html/Home.html" class="box_head">
+            <div class="next_page">HOME</div>
+        </a>
+
+        <a  href="../html/Status.html" class="box_head">
+            <div class="next_page">STATUS</div>
+        </a>
+    </div>
+    <div class="big_container">
+        <!-- กรอกข้อมููล -->
+    <div class="container-1">
+        <!-- หัวข้อ -->
+        <div class="boxin_con-1">
+            <h1 class="name_topic">INFORMATION</h1>
+        </div>
+
+        <!-- ข้อมูลทั้งหมด -->
+        <div class="boxin_con-2">
+            <!-- ฝั่งซ้าย -->
+            <div class="box_information">
+                <!-- อัพรูปภาพ -->
+                <div class="box_image">
+                    <div class="box_upload">
+                        <label for="file_upload" class="upload">Upload Picture</label>
+                        <input type="file" id="file_upload" class="image" style="display: none;">
+                    </div>
+                </div>
+
+                <!-- ตัวเลือกสถานที่ -->
+                <div class="box_select">
+                        <select name="name_position" id="" class="group">
+                            <option value="" disabled selected hidden> Location</option>
+                            <option value="อาคารบรรยายรวม-1">อาคารบรรยายรวม 1</option>
+                            <option value="อาคารบรรยายรวม-2">อาคารบรรยายรวม 2</option>
+                            <option value="อาคารบรรยายรวม-3">อาคารบรรยายรวม 3</option>
+                            <option value="อาคารบรรยายรวม-4">อาคารบรรยายรวม 4</option>
+                            <option value="อาคารบรรยายรวม-5">อาคารบรรยายรวม 5</option>
+                        </select>
+                </div>
+            </div>
+
+            <!-- ฝั่งขวา -->
+            <div class="box_information" id="box_infor-1">
+                <!-- กรอกข้อมูลเพิ่มเติม -->
+                <div class="detail">
+                    <h3>Detail</h3>
+                    <textarea name="" class="text" placeholder="Please enter your information here..."></textarea>
+                </div>
+    
+            </div>
+        </div>  
+    </div>
+    <!-- ปุ่ม SUBMIT -->
+    <button class="button">SUBMIT</button>
+    </div>
+    
+
+</body>
+</html>

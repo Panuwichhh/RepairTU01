@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Option Example</title>
+    <style>
+        .other-input {
+            display: none; /* ซ่อน input โดยเริ่มต้น */
+        }
+    </style>
+</head>
+<body>
+    <label for="dropdown">เลือกตำแหน่ง:</label>
+    <select id="dropdown">
+        <option value="">กรุณาเลือก</option>
+        <option value="option1">ตัวเลือก 1</option>
+        <option value="option2">ตัวเลือก 2</option>
+        <option value="other">อื่นๆ</option>
+    </select>
+
+    <div id="other-input-container" class="other-input">
+        <label for="other-input">โปรดระบุ:</label>
+        <input type="text" id="other-input">
+    </div>
+
+    <script>
+        document.getElementById('dropdown').addEventListener('change', function() {
+            const otherInputContainer = document.getElementById('other-input-container');
+            if (this.value === 'other') {
+                otherInputContainer.style.display = 'block'; // แสดง input เมื่อเลือก "อื่นๆ"
+            } else {
+                otherInputContainer.style.display = 'none'; // ซ่อน input ถ้าไม่เลือก "อื่นๆ"
+            }
+        });
+    </script>
+</body>
+</html>
+<img class="img" src="../picture/logo.png" alt="logo">
+
+        <!-- Log-in -->
+        <div class="box_login">
+
+            <h1 class="login">LOG IN</h1>
+            <!-- email -->
+            <div class="box_student">
+                <label for="student_id" id="student_id">&#x1FAAA;
+                    <span class="name_input">STUDENT ID</span>
+                </label>
+                <br>
+                <input class="input" type="text" name="student_id" placeholder="  student id">
+            </div>
+
+            <!-- password -->
+            <div class="box_password">
+                <label for="password" id="password">&#128274;
+                    <span class="name_input">PASSWORDL</span>
+                </label>
+                <br>
+                <input class="input" type="password" name="password" placeholder="  password">
+            </div>
+
+            <!-- submit -->
+            <a href="../html/Home.html">
+                <button class="button_submit">SUBMIT</button>
+            </a>
+
+        </div>
