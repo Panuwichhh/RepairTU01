@@ -1,9 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Test from './page/test.jsx'
+import Nav from './component/Nav.jsx'
+import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Test />
+      <Nav/>
+      
+      <i class="fa-solid fa-screwdriver-wrench"></i>
+    
   </StrictMode>,
 )
