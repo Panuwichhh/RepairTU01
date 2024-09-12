@@ -3,9 +3,9 @@ function Upload() {
 
   return (
     <>
-      <form>
+      <form className=" item-center justify-center mx-24">
         <div className="flex item-center justify-center w-full">
-          <label for="dropzone-file" className=" flex flex-col items-center justify-center bg-gray-200 h-64 w-full mx-[5rem] mb-[2rem]  mt-[3rem] border rounded-md cursor-pointer hover:bg-gray-400 hover:border-slate-500 border-2 border-dashed border-slate-400">
+          <label for="dropzone-file" className=" flex flex-col items-center justify-center bg-gray-200 h-96 w-full mx-[5rem] mb-[2rem]  mt-[3rem] border rounded-md cursor-pointer hover:bg-gray-400 hover:border-slate-500 border-2 border-dashed border-slate-400">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
               <i class="fa-regular fa-image text-[5rem]"></i>
             </div>
@@ -17,7 +17,6 @@ function Upload() {
         </div>
 
         
-
         <div className="item-center bg-gray-200 mx-20 mb-10 p-4 rounded-lg">
 
           <div className="mb-5">
