@@ -11,6 +11,6 @@ import Loginpge from './pages/Loginpge.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Loginpge />
+    <Uploadpage />
   </StrictMode>,
 )
