@@ -5,9 +5,11 @@ import Home from './pages/Home.jsx';
 import Upload from './components/Upload.jsx';
 import Nav from './components/Nav.jsx';
 import Footer from './components/Footer.jsx';
+import Login from './components/login.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Upload/>
+    <Nav/>
+    <Login/>
   </StrictMode>,
 )
