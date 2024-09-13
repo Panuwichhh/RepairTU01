@@ -3,9 +3,9 @@ function Login() {
 
     return (
         <>
-            <div className="grid grid-cols-2 h-screen items-center mx-10 max-sm:grid-cols-1">
+            <div className="grid grid-cols-2 h-screen items-center mx-10 max-md:grid-cols-1 max-md:mx-1">
                 <div className=" text-center text-[20rem] max-sm:text-[12rem]">
-                    <i class="fa-solid m-10 fa-screwdriver-wrench "></i>
+                    <i className="fa-solid m-10 fa-screwdriver-wrench "></i>
                 </div>
                 <div className="item-center my-10 mx-5 ">
                     <form className=" p-6 bordershadow-sm rounded-lg bg-gradient-to-b from-[#FF0000] to-[#FFD705] shadow-lg ">
