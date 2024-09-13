@@ -12,7 +12,7 @@ function Login() {
                 </div>
 
                 {/* login */}
-                <div className="item-center my-10 mx-5 ">
+                <div className="item-center my-10 max-md:my-5 mx-5 ">
                     <form className=" p-6 bordershadow-sm rounded-2xl bg-gradient-to-b from-[#FF0000] to-[#FFD705] shadow-2xl  mr-2 ">
                         <div className=" ">
                             <div className="text-[5rem]  font-bold text-black text-center text-white my-2">LOG IN</div>
