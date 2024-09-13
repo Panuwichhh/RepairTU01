@@ -15,7 +15,6 @@ function Upload() {
             <input id="dropzone-file" type="file" className="hidden" />
           </label>
         </div>
-
         
         <div className="item-center bg-gray-200 max-md:mx-5 mx-10  mb-10 p-4 rounded-lg">
 

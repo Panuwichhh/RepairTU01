@@ -3,7 +3,7 @@ import Login from "../components/login"
 import Nav from "../components/Nav"
 
 
-function Home() {
+function Loginpge() {
 
   return (
     <>
@@ -15,4 +15,4 @@ function Home() {
 
 }
 
-export default Home
+export default Loginpge

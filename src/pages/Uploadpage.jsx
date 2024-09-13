@@ -5,13 +5,13 @@ import Upload from "../components/Upload"
 function Uploadpage() {
 
     return (
-      <>
-<Nav/>
-<Upload/>
-<Footer/>
-      </>
+        <>
+            <Nav />
+            <Upload />
+            <Footer />
+        </>
     )
-  
-  }
-  
-  export default Uploadpage
+
+}
+
+export default Uploadpage
