@@ -25,6 +25,7 @@ function Upload() {
               <option value="option1">วิศวะ</option>
               <option value="option2">Sc</option>
               <option value="option3">Jc</option>
+              <option value="option3">โรงพยาบาล</option>
             </select>
           </div>
           <div className="mb-5">
