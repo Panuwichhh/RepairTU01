@@ -1,9 +1,10 @@
+import React from 'react'
 import Footer from "../components/Footer"
 import Login from "../components/login"
 import Nav from "../components/Nav"
 
 
-function Loginpge() {
+const Loginpge = () => {
 
   return (
     <>
