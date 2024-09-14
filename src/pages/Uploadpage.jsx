@@ -3,7 +3,7 @@ import Footer from "../components/Footer"
 import Nav from "../components/Nav"
 import Upload from "../components/Upload"
 
-function Uploadpage() {
+const Uploadpage = () =>{
 
     return (
         <>

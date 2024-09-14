@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function Nav() {
 
   return (
@@ -17,8 +19,8 @@ function Nav() {
           {/* เมนุเลือกด้านขวา */}
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul className=' w-full hidden md:w-auto font-bold md:flex text-red-600  text-[1.5rem] place-items-center mx-4' >
-              <li><a href="#" className='hover:text-black px-5' >Home</a></li>
-              <li><a href="#" className='hover:text-black px-5'>Status</a></li>
+              <li><a href="/" className='hover:text-black px-5' >Home</a></li>
+              <li><Link to="/Upload" className='hover:text-black px-5'>Status</Link></li>
           </ul>
           </div>
         </div>
