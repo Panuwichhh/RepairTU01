@@ -17,7 +17,7 @@ function Upload() {
           </label>
         </div>
 
-        <div className=" shadow-2xl mt-[3rem] h-full item-center bg-gray-200 mx-5 mb-5 rounded-[35px] p-4 w-[45rem] bg-gradient-to-b from-[#FF0000] to-[#FFD705] shadow-2xl">
+        <div className=" shadow-xl mt-[3rem] h-full item-center bg-gray-200 mx-5 mb-5 rounded-[35px] p-4 w-[45rem] bg-gradient-to-b from-[#FF0000] to-[#FFD705] shadow-2xl">
           <div className="mb-5">
             <label for="email" className="block mb-2 text-lg  font-medium  text-black ">สถานที่</label>
             <select type='choices' id="passowrd" className="shadow-sm bg-white border border-gray-300 text-gray-900  rounded-lg  w-full p-2.5 " required >
