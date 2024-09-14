@@ -8,9 +8,13 @@ import Footer from './components/Footer.jsx';
 import Login from './components/login.jsx';
 import Uploadpage from './pages/Uploadpage.jsx';
 import Loginpge from './pages/Loginpge.jsx';
+import Info from './components/infomation.jsx';
+import Fix from './components/fix.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Uploadpage />
+    <Nav/>
+    <Upload />
+    <Footer/>
   </StrictMode>,
 )
