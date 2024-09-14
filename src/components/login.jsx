@@ -19,14 +19,14 @@ function Login() {
                         </div>
                         <div className="mb-5">
                         <label for="student_id" id="student_id">
-                        &#x1FAAA; <span class="text-white text-lg">STUDENT ID</span>
+                        &#x1FAAA; <span className="text-white text-lg">STUDENT ID</span>
                     </label>
                             
                             <input type="email" id="email" className="shadow-sm bg-white border border-gray-300 text-gray-900  rounded-lg  w-full p-2.5 " placeholder="@gmail" required />
                         </div>
                         <div className="mb-5 ">
                         <label for="password" id="password">
-                        &#128274; <span class="text-white text-lg">PASSWORD</span>
+                        &#128274; <span className="text-white text-lg">PASSWORD</span>
                     </label>
                             <input type="email" id="passowrd" className="shadow-sm bg-white border border-gray-300 text-gray-900  rounded-lg  w-full p-2.5 " placeholder="*******" required />
                         </div>
