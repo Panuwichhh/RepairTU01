@@ -10,7 +10,7 @@ function Login() {
                 <div className="item-center my-10 mx-5 ">
                     <form className=" p-6 bordershadow-sm rounded-lg bg-gradient-to-b from-[#FF0000] to-[#FFD705] shadow-lg ">
                         <div className=" ">
-                            <div className="text-[5rem]  font-bold text-black text-center text-white my-2">LOG IN</div>
+                            <div className="text-[5rem]  font-bold  text-center text-white my-2">LOG IN</div>
                         </div>
                         <div className="mb-5">
                             <label for="email" className="block mb-2 text-lg  font-medium  text-white "><i class="fa-regular fa-envelope fa-xl mr-2" style={{ color: "#ffffff" }} ></i>Email</label>
