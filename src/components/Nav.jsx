@@ -42,7 +42,7 @@ function Nav() {
           {/* Main Menu (for larger screens) */}
           <div
             className="hidden w-full md:block md:w-auto"
-            id="navbar-default"
+            id="menu-toggle"
           >
             <ul className="w-full md:w-auto font-bold md:flex text-red-600 text-[1.5rem] place-items-center mx-4">
               <li>
