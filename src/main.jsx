@@ -3,8 +3,6 @@ import { StrictMode } from 'react'
 import { createRoot } from "react-dom/client";
 import ReactDOM from 'react-dom/client'
 
-
-
 import {
   createBrowserRouter,
   RouterProvider,
@@ -13,6 +11,7 @@ import {
   AbortedDeferredError,
 } from "react-router-dom";
 
+import '@fontsource/inter';
 import './index.css'
 
 import Home from './pages/Loginpge.jsx';
@@ -28,7 +27,7 @@ import Infopage from './pages/Infopage.jsx';
 
 const router = createBrowserRouter([
   {
-   path: "RepairTU01/",
+   path: "/RepairTU01",
    element: <Home/>
   },
   {
