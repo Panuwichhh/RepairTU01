@@ -10,9 +10,9 @@ function Login() {
                     <i className="fa-solid m-10 fa-screwdriver-wrench "></i>
                 </div>
                 </div> */}
-                <div className="container text-center ">
-                        <i class=" text-[15vw] text-[#340000] fa-solid fa-screwdriver-wrench"></i>
-                        <p class="text-[#340000] font-bold text-[10vw] leading-none">WECOME</p>
+                <div className=" text-center ">
+                        <i class=" text-[15vw] text-[#340000] fa-solid fa-screwdriver-wrench max-md:text-[20vw] "></i>
+                        <p class="text-[#340000] font-bold text-[10vw] leading-none max-md:text-[15vw]">WECOME</p>
                         </div>
                 {/* login */}
                 <div className="item-center my-10 max-md:my-5 mx-5 ">
