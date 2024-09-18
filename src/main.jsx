@@ -29,7 +29,7 @@ import Infopage from './pages/Infopage.jsx';
 const router = createBrowserRouter([
   {
    path: "RepairTU01/",
-   element: <Infopage/>
+   element: <Home/>
   },
   {
   path: "/Upload",
