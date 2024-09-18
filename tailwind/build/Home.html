@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="w-full h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>HOME</title>
+    
+</head>
+<!-- header -->
+<header class="w-full h-[10%] bg-white flex sticky top-0">
+    <div class="h-full bg-white grow flex items-center shadow-xl">
+        <p class="text-red-600 pl-10 pr-10 text-[40px] font-black flex items-center ">REPAIR
+            <span class="text-yellow-400">&nbsp;TU</span>
+        </p>
+    </div>
+    <a href="Home.html" class="top_bar_page">
+        HOME
+    </a>
+    <a href="Status.html" class="top_bar_page">
+        STATUS
+    </a>
+</header>
+
+<!-- content -->
+<body class="w-full h-full ">
+    <div class="w-full h-[85%]  bg-[#F6F6F6] flex flex-wrap  items-center justify-center">
+        <div class="flex flex-col flex-wrap">
+            <div class="text-[#340000]">
+                <p class="font-bold text-[10vw] leading-none">WELCOME</p>
+                <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Error quaerat saepe consequatur esse excepturi unde?</p>
+                <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Error quaerat saepe consequatur esse excepturi unde?</p>
+                <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Error quaerat saepe consequatur esse excepturi unde?</p>
+                <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Error quaerat saepe consequatur esse excepturi unde?</p>
+            </div>
+
+            <div class="text-[#340000] mt-10">
+                <h1 class="font-bold text-2xl ">How to use</h1>
+                <p class="intro">1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, libero!</p>
+                <p class="intro">2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, molestiae.</p>
+                <p class="intro">3. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, dolorum.</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col justify-center">
+            <i class="text-[15vw] text-[#340000] ml-5 fa-solid fa-screwdriver-wrench self-center"></i>
+            <button id="get_start" class="w-60 h-14 font-black bg-[#E20B0B] text-white rounded-3xl shadow-2xl mt-5 hover:opacity-80 hover:text-yellow-400">GET STARTED</button>
+        </div>
+    </div>
+</body>
+
+<!-- footer -->
+<footer class="w-full h-[15%] bg-[#340000] text-white flex justify-center items-center">
+    <p>@ Repair TU 2024</p>
+</footer>
+
+</html>
+
+<script>
+    document.getElementById('get_start').addEventListener('click', function () {
+        window.location.href = './status.html';  // Correct path to the file inside the build folder
+    });
+</script>
