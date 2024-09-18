@@ -24,16 +24,21 @@ import Uploadpage from './pages/Uploadpage.jsx';
 import Info from './components/infomation.jsx';
 import Fix from './components/fix.jsx';
 import Loginpge from './pages/Loginpge.jsx';
+import Infopage from './pages/Infopage.jsx';
 
 const router = createBrowserRouter([
   {
    path: "RepairTU01/",
-   element: <Loginpge/>
+   element: <Infopage/>
   },
   {
   path: "/Upload",
   element: <Uploadpage/>
    },
+   {
+   path: "/Infomation",
+   element: <Infopage/>
+    },
 ])
 
 
