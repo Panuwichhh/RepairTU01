@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<!-- header -->
+<header class="w-full h-[10%] bg-white flex sticky top-0">
+    <div class="h-full bg-white grow flex items-center shadow-xl">
+        <p class="text-red-600 pl-10 pr-10 text-[40px] font-black flex items-center ">REPAIR
+            <span class="text-yellow-400">&nbsp;TU</span>
+        </p>
+    </div>
+    <a href="Home.html" class="top_bar_page">
+        HOME
+    </a>
+    <a href="Status.html" class="top_bar_page">
+        STATUS
+    </a>
+</header>
+
+<body class="w-screen h-screen">
+    <h1 class="font-black bg-[#F6F6F6] text-[#340000] text-[3vw] p-3 indent-10">INFORMATION</h1>
+
+    <div class="w-full h-[90%] -mt-10 bg-[#F6F6F6] flex flex-wrap items-center justify-center">
+        <div class="flex  item-center justify-center w-[50%] h-[65%]  ">
+            <label htmlFor="dropzone-file" class="  flex flex-col items-center justify-center bg-gray-200 h-auto w-full mx-5  mb-[2rem]  mt-[3rem] border rounded-[35px] cursor-pointer hover:bg-gray-400 hover:border-black border-4 border-dashed border-red-400">
+              <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                <i class="fa-regular fa-image text-[5rem]"></i>
+              </div>
+              <div class="span">
+                UPLOAD HERE
+              </div>
+              <input id="dropzone-file" type="file" class="hidden" />
+            </label>
+        </div>
+
+        <div class="w-[45vh] h-[57vh] bg-gradient-to-t from-[#FFD705] to-[#FF0000]  m-5 rounded-3xl flex flex-col items-center shadow-2xl ">
+                <form action="#" class=" p-6">
+                    <!-- STUDENT ID -->
+                    <label for="student_id" id="student_id">
+                        <span class="text-white text-lg">หน่วยงาน</span>
+                    </label>
+
+                    <br>
+                    <textarea name="" id="" cols="35" rows="2" readonly
+                        class="shadow-xl rounded-xl indent-3 outline-none">ชื่อ</textarea>
+                    <br>
+
+                    <!-- PASSWORD -->
+                    <label for="text" id="password">
+                        <span class="text-white text-lg  ">รายละเอียดเพิ่มเติม</span>
+                    </label>
+
+                    <br>
+                    <textarea name="" id="" cols="35" rows="8" readonly
+                        class="shadow-xl rounded-xl indent-3 outline-none">อ่านเท่านั้น</textarea>
+
+                </form>
+
+            <button class="w-40 h-10 bg-[#E20B0B] text-white -mt-5 rounded-xl shadow-xl  self-center  hover:opacity-80 hover:text-yellow-400">SUBMIT</button>
+        </div>
+        
+        
+    </div>
+
+
+</body>
+<!-- footer -->
+<footer class="w-full h-[15%]  bg-[#340000] text-white  flex justify-center items-center">
+    <p>@ Repair TU 2024</p>
+</footer>
+
+</html>
