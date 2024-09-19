@@ -46,7 +46,7 @@ function Nav() {
           >
             <ul className="w-full md:w-auto font-bold md:flex text-red-600 text-[1.5rem] place-items-center mx-4">
               <li>
-                <Link to="/" className="hover:text-black px-5 py-7">
+                <Link to="/Infomation" className="hover:text-black px-5 py-7">
                   Home
                 </Link>
               </li>
