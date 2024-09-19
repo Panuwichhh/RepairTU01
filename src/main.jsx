@@ -14,7 +14,6 @@ import {
 import '@fontsource/inter';
 import './index.css'
 
-import Home from './pages/Loginpge.jsx';
 import Upload from './components/Upload.jsx';
 import Nav from './components/Nav.jsx';
 import Footer from './components/Footer.jsx';
@@ -28,7 +27,7 @@ import Infopage from './pages/Infopage.jsx';
 const router = createBrowserRouter([
   {
    path: "/RepairTU01",
-   element: <Home/>
+   element: <Loginpge/>
   },
   {
   path: "/Upload",
