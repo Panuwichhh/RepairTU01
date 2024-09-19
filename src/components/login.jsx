@@ -12,7 +12,7 @@ function Login() {
                 </div> */}
                 <div className=" text-center ">
                         <i class=" text-[15vw] text-[#340000] fa-solid fa-screwdriver-wrench max-md:text-[20vw] "></i>
-                        <p class="text-[#340000] font-bold text-[10vw] leading-none max-md:text-[15vw]">WELCOME</p>
+                        <p class="text-[#340000] font-bold text-[9vw] leading-none max-md:text-[15vw]">WELCOME</p>
                         </div>
                 {/* login */}
                 <div className="item-center my-10 max-md:my-5 mx-5 ">
