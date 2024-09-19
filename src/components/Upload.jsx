@@ -39,7 +39,7 @@ function Upload() {
           </div>
           <div className="mb-5 text-center">
             <button className="shadow bg-red-500 text-white  hover:bg-red-400 text-white font-bold py-2 px-4 rounded" type="button">
-              Summit
+              Submit
             </button>
           </div>
         </div>
