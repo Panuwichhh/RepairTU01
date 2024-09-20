@@ -23,6 +23,7 @@ import Info from './components/infomation.jsx';
 import Fix from './components/fix.jsx';
 import Loginpge from './pages/Loginpge.jsx';
 import Infopage from './pages/Infopage.jsx';
+import Homepage from './pages/homepage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
    path: "/Infomation",
    element: <Infopage/>
     },
+    {
+    path: "/Home",
+    element: <Homepage/>
+     },
 ])
 
 
