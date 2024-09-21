@@ -63,7 +63,7 @@ function Nav() {
         {isMenuOpen && (
           <ul className="flex flex-col items-center mt-4 space-y-4 md:hidden">
             <li>
-              <Link to="/" className="hover:text-black px-5 py-2">
+              <Link to="/Home" className="hover:text-black px-5 py-2">
                 Home
               </Link>
             </li>
