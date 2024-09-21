@@ -1,6 +1,7 @@
 
 function Upload() {
 
+
   return (
     <>
    <div className="font-inter">
@@ -44,9 +45,6 @@ function Upload() {
           </div>
         </div>
         </div>
-        
-
-
       </form>
       </div>
 

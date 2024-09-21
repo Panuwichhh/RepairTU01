@@ -1,7 +1,7 @@
-import express from 'express'; //สร้างตัวแปร express
+const express = require('express'); //สร้างตัวแปร express
 const morgan = require('morgan'); //เรียกใช้จาก morgan
 const cors = require('cors');
-const connectDB = require('./Config/db');
+const connectDB = require('./config/db');
 
 const { readdirSync } = require('fs'); //เรียกเพื่อใช้แบบ auto เป็นฟังก์ชันแบบ built in ไม่ต้องโหลด
 const app = express(); 
