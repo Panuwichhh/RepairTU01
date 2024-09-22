@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Home() {
   return (
     <>
-     <div className="h-screen bg-[#F6F6F6] flex flex-cols-2  items-center justify-center">
+     <div className="h-screen bg-[#F6F6F6] flex grid-cols-2 grid max-md:grid-cols-1 items-center justify-center">
         <div className="">
             <div className="text-[#340000] ml-5 ">
                 <p className="font-bold text-[10vw] text-center  leading-none mb-10">WELCOME</p>
@@ -23,7 +23,6 @@ function Home() {
             </div>
         </div>
         
-
         <div className="flex flex-col items-center">
             <i class=" mb-20 text-[25vw] text-[#340000] fa-solid fa-screwdriver-wrench max-md:text-[20vw] "></i>
             <button id="get_start" className="w-60 h-14 font-black bg-[#E20B0B] text-white rounded-3xl shadow-2xl mt-5 hover:opacity-80 hover:text-yellow-400"><Link to="/Upload">GET STARTED</Link></button>

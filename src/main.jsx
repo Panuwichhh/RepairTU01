@@ -14,6 +14,7 @@ import Uploadpage from './pages/Uploadpage.jsx';
 import Loginpge from './pages/Loginpge.jsx';
 import Infopage from './pages/Infopage.jsx';
 import Homepage from './pages/homepage.jsx';
+import Statuspage from './pages/Statuspage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/Home",
     element: <Homepage/>
+  },
+  {
+    path: "/Status",
+    element: <Statuspage/>
   },
 ]);
 
