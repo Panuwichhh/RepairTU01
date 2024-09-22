@@ -68,7 +68,7 @@ function Nav() {
               </Link>
             </li>
             <li>
-              <Link to="/Upload" className="hover:text-black px-5 py-2">
+              <Link to="/Status" className="hover:text-black px-5 py-2">
                 Status
               </Link>
             </li>

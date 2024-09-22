@@ -22,19 +22,19 @@ const router = createBrowserRouter([
     element: <Loginpge/>
   },
   {
-    path: "/Upload",
+    path: "Upload",
     element: <Uploadpage/>
   },
   {
-    path: "/Infomation",
+    path: "Infomation",
     element: <Infopage/>
   },
   {
-    path: "/Home",
+    path: "Home",
     element: <Homepage/>
   },
   {
-    path: "/Status",
+    path: "Status",
     element: <Statuspage/>
   },
 ]);
