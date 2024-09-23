@@ -1,13 +1,11 @@
 import mongoose from 'mongoose';
 
 const productSchema = new mongoose.Schema({
-    detail: {
-        type: String,
-        required: true,
+    detail:{
+        type:String
     },
     location: {
-        type: String,
-        required: true,
+        type:String
     },
 });
 

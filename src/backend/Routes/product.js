@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 });
 
 // API POST สำหรับสร้างผลิตภัณฑ์ใหม่
-router.post('/', async (req, res) => {
+router.post('/add', async (req, res) => {
     try {
         const { detail, location } = req.body; // ดึงข้อมูลจาก body ของ request
         const newProduct = new Product({ detail, location }); // สร้างผลิตภัณฑ์ใหม่
