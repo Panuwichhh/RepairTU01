@@ -10,13 +10,15 @@ router.get('/', (req, res) => {
 
 // API POST สำหรับสร้างผลิตภัณฑ์ใหม่
 router.post('/add', async (req, res) => {
+    console.log(req.body)
     try {
-        const { detail, location } = req.body; // ดึงข้อมูลจาก body ของ request
-        const newProduct = new Product({ detail, location }); // สร้างผลิตภัณฑ์ใหม่
-        await newProduct.save(); // บันทึกลงในฐานข้อมูล
-        res.status(201).json(newProduct); // ส่งข้อมูลผลิตภัณฑ์ที่ถูกสร้างกลับไป
+        const { detail, location } = req.body;
+        const newProduct = new Product({ detail, location });
+        await newProduct.save();
+        res.status(201).json(newProduct);
     } catch (err) {
-        res.status(400).json({ error: err.message }); // ส่งข้อผิดพลาดหากมี
+        console.error('Error saving product:', err);
+        res.status(400).json({ error: err.message });
     }
 });
 
