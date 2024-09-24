@@ -57,12 +57,12 @@ function Upload() {
           <div className="bg-gradient-to-b from-[#FF0000] to-[#FFD705] shadow-2xl  item-center mx-5 mb-5 rounded-3xl p-4">
           <div className="mb-5">
             <label htmlFor="email" className="text-white block mb-2 text-lg  font-medium   ">สถานที่</label>
-            <select type='choices' onChange={(e) => setLocation(e.target.value)} value={location}
+            <select type='choices' select="select some pption" onChange={(e) => setLocation(e.target.value)} value={location}
              className="shadow-sm bg-white border border-gray-300 text-gray-900  rounded-lg  w-full p-2.5 " required >
-              <option value="option1">วิศวะ</option>
-              <option value="option2">Sc</option>
-              <option value="option3">Jc</option>
-              <option value="option3">โรงพยาบาล</option>
+              <option value="Engr">วิศวะ</option>
+              <option value="Sc">Sc</option>
+              <option value="Jc">Jc</option>
+              <option value="Hospital">โรงพยาบาล</option>
             </select>
           </div>
           <div className="mb-5">
