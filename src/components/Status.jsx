@@ -18,7 +18,6 @@ function Status() {
                     peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full
                     after:absolute after:top-[4px] after:start-[6px] after:bg-[#FFD705] after:rounded-full 
                     after:h-12 after:w-[48%] after:transition-all peer-checked:bg-[#340000]">
-
                     <div class="flex items-center justify-between h-full px-4">
                         <span class="text-[#340000] font-semibold ml-5 z-10">REPAIRED</span>
                         <span class="text-[#340000] font-semibold  z-10">PENDING REPAIR</span>
@@ -26,9 +25,7 @@ function Status() {
                 </div>
             </label>
 
-
             <button id="to_add_page" class="text-5xl  text-white mr-12 fa-solid fa-plus hover:opacity-80"></button>
-
         </div>
 
         {/* <!-- Centering the gray box --> */}
@@ -73,11 +70,6 @@ function Status() {
                         <div id="status_color" class="w-5 h-5 bg-red-500 rounded-full"></div>
                     </div>
                 </div>
-
-                
-
-
-
             </div>
         </div>
 

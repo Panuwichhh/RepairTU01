@@ -9,11 +9,11 @@ router.get('/', (req, res) => {
 });
 
 // API POST สำหรับสร้างผลิตภัณฑ์ใหม่
-router.post('/add', async (req, res) => {
+router.post('/upload', async (req, res) => {
     console.log(req.body)
     try {
-        const { detail, location } = req.body;
-        const newProduct = new Product({ detail, location });
+        const { details,issue , location } = req.body;
+        const newProduct = new Product({ details, issue , location });
         await newProduct.save();
         res.status(201).json(newProduct);
     } catch (err) {

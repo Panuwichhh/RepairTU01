@@ -1,6 +1,40 @@
+import React, { useState } from 'react';
 
 function Upload() {
+  const [location, setLocation] = useState('');
+  const [issue, setIssue] = useState('');
+  const [details, setDetails] = useState('');
 
+  const handleSubmit = async () => {
+    console.error(issue)
+    console.error(location)
+    console.error(details)
+
+    const formData = {
+      location: location,
+      issue: issue,
+      details: details,
+    };
+
+    try {
+      const response = await fetch('http://localhost:5000/api/upload', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log(formData)
+        console.log('Data submitted successfully');
+      } else {
+        console.error('Failed to submit data');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   return (
     <>
@@ -23,7 +57,8 @@ function Upload() {
           <div className="bg-gradient-to-b from-[#FF0000] to-[#FFD705] shadow-2xl  item-center mx-5 mb-5 rounded-3xl p-4">
           <div className="mb-5">
             <label htmlFor="email" className="text-white block mb-2 text-lg  font-medium   ">สถานที่</label>
-            <select type='choices' className="shadow-sm bg-white border border-gray-300 text-gray-900  rounded-lg  w-full p-2.5 " required >
+            <select type='choices' onChange={(e) => setLocation(e.target.value)} value={location}
+             className="shadow-sm bg-white border border-gray-300 text-gray-900  rounded-lg  w-full p-2.5 " required >
               <option value="option1">วิศวะ</option>
               <option value="option2">Sc</option>
               <option value="option3">Jc</option>
@@ -32,14 +67,17 @@ function Upload() {
           </div>
           <div className="mb-5">
             <label htmlFor="email" className=" text-white block mb-2 text-lg  font-medium   ">สิ่งที่ต้องการแก้ไข</label>
-            <input type='text' className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-lg w-full p-2.5  " placeholder="สิ่งที่ต้องการแก้ไข"></input>
+            <input type='text'  onChange={(e) => setIssue(e.target.value)} value={issue}
+             className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-lg w-full p-2.5  " placeholder="สิ่งที่ต้องการแก้ไข"></input>
           </div>
           <div className="mb-5">
             <label htmlFor="email" className="block mb-2 text-lg  font-medium  text-white ">รายละเอียดเพิ่มเเติม</label>
-            <textarea type='text' className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-lg w-full p-2.5 h-64 " placeholder="ใส่รายละเอียด"></textarea>
+            <textarea type='text' value={details}  onChange={(e) => setDetails(e.target.value)}
+            className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-lg w-full p-2.5 h-64 " placeholder="ใส่รายละเอียด"></textarea>
           </div>
           <div className="mb-5 text-center">
-            <button className="shadow bg-red-500 text-white  hover:bg-red-400 text-white font-bold py-2 px-4 rounded" type="button">
+            <button onClick={handleSubmit}  
+            className="shadow bg-red-500 text-white  hover:bg-red-400 text-white font-bold py-2 px-4 rounded" type="button">
               Submit
             </button>
           </div>
