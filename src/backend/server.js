@@ -9,7 +9,6 @@ const port = process.env.PORT || 5000;
 // เชื่อมต่อกับ MongoDB
 connectDB();
 
-
 app.use(cors());
 
 // ใช้ express.json() เพื่อรับข้อมูล JSON

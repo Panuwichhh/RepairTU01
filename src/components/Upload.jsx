@@ -28,7 +28,9 @@ function Upload() {
       if (response.ok) {
         console.log(formData)
         console.log('Data submitted successfully');
+        window.alert('ส่งข้อมูลสำเร็จ')
       } else {
+        window.alert('ส่งข้อมูลไม่สำเร็จ')
         console.error('Failed to submit data');
       }
     } catch (error) {

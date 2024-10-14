@@ -3,8 +3,8 @@ import React from 'react'
 function Status() {
   return (
    <>
-       <div className="w-full h-[20rem] bg-[##F6F6F6] flex items-center indent-10">
-        <h1 className="font-bold text-5xl text-[#340000]">STATUS</h1>
+       <div className="w-full  bg-[##F6F6F6] flex items-center indent-10">
+        <h1 className="font-bold text-5xl text-[#340000] my-5">STATUS</h1>
     </div>
 
     <div className="w-full h-[50rem] bg-gradient-to-t from-[#FFD705] to-[#FF0000] rounded-t-[35px]">
