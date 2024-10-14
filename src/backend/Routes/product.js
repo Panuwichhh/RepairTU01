@@ -1,15 +1,15 @@
 import express from 'express';
 import Product from '../Models/Product.js';
 
-const router = express.Router();
+const productrouter = express.Router();
 
 
-router.get('/', (req, res) => {
+productrouter.get('/', (req, res) => {
     res.send('Welcome to the API');
 });
 
 // API POST สำหรับสร้างผลิตภัณฑ์ใหม่
-router.post('/upload', async (req, res) => {
+productrouter.post('/upload', async (req, res) => {
     console.log(req.body)
     try {
         const { details,issue , location } = req.body;
@@ -22,4 +22,4 @@ router.post('/upload', async (req, res) => {
     }
 });
 
-export default router;
+export default productrouter;

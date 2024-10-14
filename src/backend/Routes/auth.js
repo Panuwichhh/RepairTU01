@@ -1,104 +1,58 @@
 const express = require('express');
-const router = express.Router();
-const { register,login,create,list } = require('../Controllers/auth');
-const Users = require('../Models/Users');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');//ให้token user ไป จะกำหนดให้ อยู่กี่นาทีก็ได้
-const { token } = require('morgan');
+const jwt = require('jsonwebtoken');
+const User = require('../models/user');
+const authRoutes = express.Router();
 
+// POST /login
+router.post('/login', async (req, res) => {
+  const { studentId, password } = req.body;
 
-exports.register = async(req,res) => {
-    try{ //ต้องจับ error ไว้ เพราะ nodejs ถ้ามี error แล้ว server มันจะ stop
-
-        // 1.Check user ว่าเคยมีใน database หรือยัง
-        const { StudentID,Password } = req.body; // ต้อง destructering คือ การดึงข้อมูลออกมา
-        var user = await Users.findOne({ StudentID }) //ถ้าไม่่มีข้อมูล คือเป็น null ถ้าไม่มีก็ส่งไปบันทึกเลย
-        if(user){
-            return res.send("This Student ID has already use.").status(400);
-        }
-        
-        console.log(user);
-//------------------------------------------------------------------------------------------------------
-        //2.Encrypt คือ การเข้ารหัส
-        const salt = await bcrypt.genSalt(10); //ได้รหัสมั่วๆ มา เช่น $2a$10$v2YYutyyKVvZI แล้วเอาไปผสมกับรหัสของเรา
-        user = new Users({
-            StudentID,
-            Password
-        })
-        console.log(salt)
-        user.Password = await bcrypt.hash(Password,salt) //เอา salt ไปผสมกับ password
-        console.log(user)
-//------------------------------------------------------------------------------------------------------
-        //3.save
-        await user.save()
-        res.send("Register Success"); //ร้องขอข้อมูล
-    }
-    catch(err){
-        res.send(err);
-    }
-}
-
-exports.login = async(req,res) => {
-    try{ //ต้องจับ error ไว้ เพราะ nodejs ถ้ามี error แล้ว server มันจะ stop
-        //1.check password ว่าถูกต้องไหม
-        const { StudentID,Password } = req.body;
-        var user = await Users.findOneAndUpdate({StudentID},{new:true});
-        if (user){
-            const password_correct = await bcrypt.compare(Password,user.Password);
-            if(!password_correct){
-                return res.status(400).send("Password is not correct!");
-            }
-//-----------------------------------------------------------------------------------------------------
-            //2.payload เปรียบเสทือนเตรียมข้อมูลส่งให้หน้าบ้าน
-            var payload = {
-                user : {
-                    StudentID:user.StudentID
-                }
-            }
-//------------------------------------------------------------------------------------------------------
-        //3.Generate token ใส่ '1d' คือ 1 วัน
-            jwt.sign(payload,'jwtsecret',{ expiresIn : '1d'},(err,token)=>{ //เอาข้อมูลอะไรไปสร้าง token บ้าง
-                if(err) throw err;
-                res.json({token,payload}); //คือ ข้อมูลของ user
-            }) //login เสร็จ หน้าบ้าน ได้ token ไปใช้งาน
-            
-        }else{
-            return res.status(400).send("user not found");
-        }
+  try {
+    // ตรวจสอบว่า User มีอยู่ในระบบหรือไม่
+    const user = await User.findOne({ studentId });
+    if (!user) {
+      return res.status(404).json({ message: 'ID not found.' });
     }
 
-    catch(err){
-        res.send(err);
+    // ตรวจสอบรหัสผ่าน
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: 'Password incorrect.' });
     }
-}
 
-exports.create = async(req,res) => {
-    try{
-        const user = await Users(req.body).save();
-        res.send(user)
-    }
-    catch(err){
-        res.send(err);
-    }
-}
+    // สร้าง JWT Token
+    const payload = { userId: user._id, studentId: user.studentId };
+    const accessToken = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '15m' });
+    const refreshToken = jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET);
 
-exports.list = async(req,res) => {
-    try{
-        const user = await Users.find({}).exec();
-        res.send(user);
-    }
-    catch(err){
-        console.log(err)
-        res.status(500).send("Server error")
-    }
-}
+    res.json({ accessToken, refreshToken });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'An error occurred.' });
+  }
+});
 
+// POST /register
+router.post('/register', async (req, res) => {
+  const { password, studentId } = req.body;
 
+  try {
+    // เข้ารหัสรหัสผ่าน
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-router.get('/user',list) //ดู studentID และ Password
-router.post('/register',register) //post คือ หน้าบ้านส่งข้อมูลมาหลังบ้าน ส่วน get คือ ร้องขอข้อมูล
-router.post('/register',create);
-router.post('/login',login);
+    // สร้างผู้ใช้ใหม่
+    const newUser = new User({
+      password: hashedPassword,
+      studentId,
+    });
 
+    await newUser.save();
+    res.status(201).json({ message: 'User registered successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'An error occurred.' });
+  }
+});
 
-module.exports = router;
+export default authRoutes;

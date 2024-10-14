@@ -1,6 +1,8 @@
 import express from 'express';
 import connectDB from './db.js';
-import router from './Routes/product.js';
+import productrouter from './Routes/product.js';
+const authRoutes = require('./Routes/auth.js');
+
 import cors from 'cors';
 
 const app = express();
@@ -15,7 +17,10 @@ app.use(cors());
 app.use(express.json());
 
 // ใช้ router สำหรับผลิตภัณฑ์
-app.use('/api', router);
+app.use('/api', productrouter);
+
+// Route สำหรับการ Login และ Register
+app.use('/auth', authRoutes);
 
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);

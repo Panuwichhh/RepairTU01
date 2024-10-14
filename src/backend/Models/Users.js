@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
-const userSchema = mongoose.Schema({
-    StudentID : String,
-    Password :{
-        type : String
-    }
-},{timestamps : true});
+const userSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String
+    },
+})
 
 export default mongoose.model('users',userSchema);
