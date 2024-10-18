@@ -1,35 +1,42 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+
 
 function Login() {
-    const [studentId, setStudentId] = useState('');
-    const [password, setPassword] = useState('');
-    const [accessToken, setAccessToken] = useState('');
-    const [refreshToken, setRefreshToken] = useState('');
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
 
-        // ส่งข้อมูลไปยัง API login
-        try {
-            const response = await fetch('http://localhost:5000/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ studentId, password }),
-            });
+    const [value, setValue] = useState({
+        StudentId: '',
+        Password: '',
+      });
 
-            if (response.ok) {
-                const data = await response.json();
-                setAccessToken(data.accessToken);
-                setRefreshToken(data.refreshToken);
-            } else {
-                const errorData = await response.json();
-                alert(errorData.message);
-            }
-        } catch (error) {
-            console.error('Error:', error);
+      
+      const handleInputChange = (event) => {
+        const { name, value: inputValue } = event.target;
+        setValue((prevValue) => ({
+          ...prevValue, // Spread the previous state properly
+          [name]: inputValue, // Update the changed field
+        }));
+      };
+
+
+  const handleSubmit  = (event) => {
+    event.preventDefault();
+    console.log(value)
+    axios.post('http://localhost:5000/api/logim',FormData)
+    .then((response) => {
+        console.log('Success', response.data);
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log('Server Error', error.response.data);
+        } else if (error.request) {
+          console.log('Network Error', error.request);
+        } else {
+          console.log('Error', error.message);
         }
+      });
+  
     };
 
     return (
@@ -52,16 +59,16 @@ function Login() {
                             </label>
 
                             <input             type="text"
-            value={studentId}
-            onChange={(e) => setStudentId(e.target.value)}className="shadow-sm bg-white border border-gray-300 text-gray-900  rounded-xl  w-full p-2.5 " placeholder="" required />
+            value={value.StudentId}
+            onChange={handleInputChange}className="shadow-sm bg-white border border-gray-300 text-gray-900  rounded-xl  w-full p-2.5 " placeholder="" required />
                         </div>
                         <div className="mb-5 ">
                             <label for="password" id="password">
                                 &#128274; <span className="text-white text-xl">PASSWORD</span>
                             </label>
                             <input type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)} id="passowrd" className="shadow-sm bg-white border border-gray-300 text-gray-900  rounded-xl   w-full p-2.5 " placeholder="*******" required />
+                                value={value.Password}
+                                onChange={handleInputChange} id="passowrd" className="shadow-sm bg-white border border-gray-300 text-gray-900  rounded-xl   w-full p-2.5 " placeholder="*******" required />
                         </div>
                         <div className="mb-5 text-center ">
                             <button onClick={handleSubmit} type="submit" className=" shadow-lg  bg-[#E20B0B] hover:bg-red-400 text-white font-bold py-2 px-4 rounded" >
@@ -71,20 +78,7 @@ function Login() {
                         </div>
                     </form>
                 </div>
-                {accessToken && (
-        <div>
-          <h2>Access Token:</h2>
-          <p>{accessToken}</p>
-        </div>
-      )}
-
-      {refreshToken && (
-        <div>
-          <h2>Refresh Token:</h2>
-          <p>{refreshToken}</p>
-        </div>
-      )}
-            </div>
+                </div>
         </>
     )
 
