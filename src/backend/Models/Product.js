@@ -15,4 +15,4 @@ const productSchema = mongoose.Schema({ //สร้าว model มาแล้�
 }, { timestamps: true });
 //ที่ detail กับ location มีปีกกา แล้วก็ type มันเป็นการสร้างให้สามารถตั้งค่าคุณสมบัติอื่นๆอีกได้ แต่ name ตั้งค่าได้แค่ชื่อ ที่เป็น string
 
-export default mongoose.model('Product', productSchema);
+export default mongoose.model('reports', productSchema);
