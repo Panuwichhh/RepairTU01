@@ -1,41 +1,40 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function Upload() {
-  const [location, setLocation] = useState('');
-  const [issue, setIssue] = useState('');
-  const [details, setDetails] = useState('');
 
-  const handleSubmit = async () => {
-    console.error(issue)
-    console.error(location)
-    console.error(details)
 
-    const formData = {
-      location: location,
-      issue: issue,
-      details: details,
-    };
+  const [value, setValue] = useState({
+    location: 'Engr',
+    issue: 'xxx',
+    details: 'xxx',
+  });
 
-    try {
-      const response = await fetch('http://localhost:5000/api/upload', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        console.log(formData)
-        console.log('Data submitted successfully');
-        window.alert('ส่งข้อมูลสำเร็จ')
+  const handleSubmit  = (event) => {
+    event.preventDefault();
+    console.log(value)
+    axios.post('http://localhost:5000/api/upload',value)
+    .then((response) => {
+      console.log('Success', response.data);
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log('Server Error', error.response.data);
+      } else if (error.request) {
+        console.log('Network Error', error.request);
       } else {
-        window.alert('ส่งข้อมูลไม่สำเร็จ')
-        console.error('Failed to submit data');
+        console.log('Error', error.message);
       }
-    } catch (error) {
-      console.error('Error:', error);
-    }
+    });
+
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value: inputValue } = event.target;
+    setValue((prevValue) => ({
+      ...prevValue, // Spread the previous state properly
+      [name]: inputValue, // Update the changed field
+    }));
   };
 
   return (
@@ -58,8 +57,11 @@ function Upload() {
         <div className="mt-[3rem] p-4 w-1/3 max-xl:w-full max-xl:mt-1">
           <div className="bg-gradient-to-b from-[#FF0000] to-[#FFD705] shadow-2xl  item-center mx-5 mb-5 rounded-3xl p-4">
           <div className="mb-5">
-            <label htmlFor="email" className="text-white block mb-2 text-lg  font-medium   ">สถานที่</label>
-            <select type='choices' select="select some pption" onChange={(e) => setLocation(e.target.value)} value={location}
+            <label  className="text-white block mb-2 text-lg  font-medium   ">สถานที่</label>
+            <select type='choices' select="select some pption"                  
+             name="location"
+                  onChange={handleInputChange}
+                  value={value.location}
              className="shadow-sm bg-white border border-gray-300 text-gray-900  rounded-lg  w-full p-2.5 " required >
               <option value="Engr">วิศวะ</option>
               <option value="Sc">Sc</option>
@@ -68,13 +70,17 @@ function Upload() {
             </select>
           </div>
           <div className="mb-5">
-            <label htmlFor="email" className=" text-white block mb-2 text-lg  font-medium   ">สิ่งที่ต้องการแก้ไข</label>
-            <input type='text'  onChange={(e) => setIssue(e.target.value)} value={issue}
+            <label  className=" text-white block mb-2 text-lg  font-medium   ">สิ่งที่ต้องการแก้ไข</label>
+            <input type='text'  name="issue"
+                  onChange={handleInputChange}
+                  value={value.issue}
              className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-lg w-full p-2.5  " placeholder="สิ่งที่ต้องการแก้ไข"></input>
           </div>
           <div className="mb-5">
-            <label htmlFor="email" className="block mb-2 text-lg  font-medium  text-white ">รายละเอียดเพิ่มเเติม</label>
-            <textarea type='text' value={details}  onChange={(e) => setDetails(e.target.value)}
+            <label  className="block mb-2 text-lg  font-medium  text-white ">รายละเอียดเพิ่มเเติม</label>
+            <textarea type='text' name="details"
+                  onChange={handleInputChange}
+                  value={value.details}
             className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-lg w-full p-2.5 h-64 " placeholder="ใส่รายละเอียด"></textarea>
           </div>
           <div className="mb-5 text-center">
