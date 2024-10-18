@@ -2,7 +2,9 @@ import React from 'react'
 
 function Status() {
 
-    const items = ['Apple', 'Banana', 'Orange', 'Mango'];
+    const items = ['Apple', 'Banana', 'Orange', 'Mango',"ssss"];
+
+
 
     return (
         <>

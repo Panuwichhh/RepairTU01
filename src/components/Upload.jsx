@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function Upload() {
-
+  const [image, setImage] = useState(null);
 
   const [value, setValue] = useState({
     location: 'Engr',
@@ -10,10 +10,21 @@ function Upload() {
     details: 'xxx',
   });
 
+  const formData = new FormData();
+  formData.append('image', image);  // แนบรูปภาพ
+  formData.append('location', value.location);
+  formData.append('issue', value.issue);
+  formData.append('details', value.details);
+
   const handleSubmit  = (event) => {
     event.preventDefault();
     console.log(value)
-    axios.post('http://localhost:5000/api/upload',value)
+    axios.post('http://localhost:5000/api/upload',FormData, {
+      headers: {
+        'Content-Type': 'multipart/form-data', // ต้องกำหนด Content-Type เป็น multipart/form-data
+      }
+    })
+    
     .then((response) => {
       console.log('Success', response.data);
     })
@@ -27,6 +38,12 @@ function Upload() {
       }
     });
 
+  };
+
+  const handleImageChange = (event) => {
+    const selectedImage = event.target.files[0];  // เก็บไฟล์ที่ผู้ใช้เลือกไว้ในตัวแปร
+    setImage(selectedImage);  // อัปเดต state ด้วยไฟล์ที่เลือก
+    console.log(selectedImage); // บันทึกข้อมูลไฟล์ลงใน console
   };
 
   const handleInputChange = (event) => {
@@ -50,7 +67,7 @@ function Upload() {
             <div className=" text-lg flex ">
               <p>Click to upload image</p> <p className="text-red-400 ml-2 underline underline-offset-2">Here</p>
             </div>
-            <input id="dropzone-file" type="file" className="hidden" />
+            <input id="dropzone-file" type="file" className="hidden"  onChange={handleImageChange} />
           </label>
         </div>
 
