@@ -70,7 +70,7 @@ function Upload() {
                   </>
                 )}
               </div>
-              <input required id="dropzone-file" type="file" className="hidden" onChange={handleFileChange} />
+              <input id="dropzone-file" type="file" className="hidden" onChange={handleFileChange} />
             </label>
           </div>
 
