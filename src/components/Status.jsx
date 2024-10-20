@@ -1,9 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 function Status() {
 
-    const items = ['Apple', 'Banana', 'Orange', 'Mango',"ssss"];
+    const repairedItems = ['บรรยายรวม 1', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์'];
+    const pendingItems = ['พาณิชยศาตร์ และการบัญชี', 'ministadium', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์'];
+    
+    // สร้าง state เพื่อเก็บสถานะปัจจุบันของสวิตช์
+    const [isRepaired, setIsRepaired] = useState(true);
 
+    // ฟังก์ชันจัดการการเปลี่ยนสถานะของสวิตช์
+    const handleToggle = () => {
+        setIsRepaired(!isRepaired); // สลับสถานะเมื่อคลิก
+    };
 
 
     return (
@@ -17,7 +25,9 @@ function Status() {
                 <div className="w-[20%] h-[5%]"></div>
                 <div className="flex justify-between items-center">
                     <label className="inline-flex items-center cursor-pointer ">
-                        <input type="checkbox" id="toggleSwitch" className="sr-only peer" />
+                        <input type="checkbox" id="toggleSwitch" className="sr-only peer" 
+                        onChange={handleToggle} // เรียกฟังก์ชันเมื่อมีการเปลี่ยนสถานะ
+                            checked={!isRepaired} />
                         <div className="relative w-72 h-14 ml-20
                      rounded-full peer dark:bg-[#340000] 
                     peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full
@@ -35,39 +45,28 @@ function Status() {
 
                 {/* <!-- Centering the gray box --> */}
                 <div className="flex justify-center items-center w-full h-[75%] mt-10">
-                    <div id="statusBox" className="w-[85%] h-[90%] bg-gray-200 rounded-md">
-
-                        {items.map((item, index) => (
-                            <div className="flex p-5 bg-red-200 mb-2">
-                                <li key={index}>{item}
-                                </li>
-                            </div>
-                        ))}
-
-
-                        <div id="not-done-section" className="w-full h-[10vh] bg-[#F6F6F6] shadow-xl flex justify-between hidden">
-
-                            <div className="w-1/5 h-full flex items-center justify-center">
-                                <img src="" alt="" className="w-10 h-10 bg-gray-400 rounded-full" />
-                            </div>
-                            <div className="w-full h-full">
-                                <div className=" w-full h-1/2 font-black text-[3vh] flex items-center ">
-                                    <p>Location-2</p>
-                                    <p className="font-normal text-[15px] ml-10">Time 00:00</p>
+                    <div id="statusBox" className="w-[85%] h-[90%] bg-gray-200 rounded-md overflow-y-auto">
+                        {isRepaired ? (
+                            // แสดงรายการเมื่อสถานะเป็น "Repaired"
+                            repairedItems.map((item, index) => (
+                                <div key={index} className="flex p-5 bg-green-200 mb-2">
+                                    <li>{item}</li>
                                 </div>
-                                <div className=" w-full h-1/2 text-gray-500 ">
-                                    name
+                            ))
+                        ) : (
+                            // แสดงรายการเมื่อสถานะเป็น "Pending Repair"
+                            pendingItems.map((item, index) => (
+                                <div key={index} className="flex p-5 bg-red-200 mb-1 shadow-sm ">
+                                    <li>{item}</li>
                                 </div>
-                            </div>
+                            ))
+                        )}
 
-                            <div className="w-28 h-full flex items-center justify-center">
-                                <div id="status_color" className="w-5 h-5 bg-red-500 rounded-full"></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
-            </div></>
+            </div>
+        </>
     )
 }
 
