@@ -70,7 +70,7 @@ function Upload() {
                   </>
                 )}
               </div>
-              <input id="dropzone-file" type="file" className="hidden" onChange={handleFileChange} />
+              <input required id="dropzone-file" type="file" className="hidden" onChange={handleFileChange} />
             </label>
           </div>
 
@@ -80,6 +80,7 @@ function Upload() {
               <div className="mb-5">
                 <label className="text-white block mb-2 text-lg font-medium">สถานที่</label>
                 <select name="location" onChange={handleInputChange} value={value.location} className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-lg w-full p-2.5" required>
+                <option value="">เลือกสถานที่</option>
                   <option value="Engr">วิศวะ</option>
                   <option value="Sc">Sc</option>
                   <option value="Jc">Jc</option>
@@ -88,7 +89,7 @@ function Upload() {
               </div>
               <div className="mb-5">
                 <label className="text-white block mb-2 text-lg font-medium">สิ่งที่ต้องการแก้ไข</label>
-                <input type='text' name="issue" onChange={handleInputChange} value={value.issue} className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-lg w-full p-2.5" placeholder="สิ่งที่ต้องการแก้ไข" />
+                <input type='text' name="issue" required onChange={handleInputChange} value={value.issue} className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-lg w-full p-2.5" placeholder="สิ่งที่ต้องการแก้ไข" />
               </div>
               <div className="mb-5">
                 <label className="block mb-2 text-lg font-medium text-white">รายละเอียดเพิ่มเติม</label>

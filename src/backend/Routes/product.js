@@ -3,7 +3,6 @@ import Product from '../Models/Product.js';
 
 const productrouter = express.Router();
 
-
 productrouter.get('/', (req, res) => {
     res.send('Welcome to the API');
 });
