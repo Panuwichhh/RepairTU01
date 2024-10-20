@@ -18,7 +18,7 @@ import Statuspage from './pages/Statuspage.jsx';
 
 const router = createBrowserRouter([
   {
-    path: "/RepairTU01",
+    path: "/",
     element: <Loginpge/>
   },
   {
