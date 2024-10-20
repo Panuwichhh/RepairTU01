@@ -11,7 +11,7 @@ import '@fontsource/inter';
 import './index.css';
 
 import Uploadpage from './pages/Uploadpage.jsx';
-import Loginpge from './pages/Loginpge.jsx';
+import Loginpge from './pages/Loginpage.jsx';
 import Infopage from './pages/Infopage.jsx';
 import Homepage from './pages/homepage.jsx';
 import Statuspage from './pages/Statuspage.jsx';

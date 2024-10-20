@@ -2,24 +2,25 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function Upload() {
-  const [file, setFile] = useState(null); // ประกาศ state สำหรับเก็บไฟล์
+  const [file, setFile] = useState(null); // เก็บไฟล์ที่ผู้ใช้อัปโหลด
   const [value, setValue] = useState({
     location: '',
     issue: '',
     details: '',
   });
+  const [preview, setPreview] = useState(null); // สำหรับแสดงภาพพื้นหลัง
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0]; // เก็บไฟล์ที่ผู้ใช้เลือก
     setFile(selectedFile); // อัปเดต state ด้วยไฟล์ที่เลือก
-    console.log(selectedFile); // บันทึกข้อมูลไฟล์ลงใน console
+    setPreview(URL.createObjectURL(selectedFile)); // สร้าง URL ของไฟล์เพื่อแสดงภาพตัวอย่างเป็นพื้นหลัง
   };
 
   const handleInputChange = (event) => {
     const { name, value: inputValue } = event.target;
     setValue((prevValue) => ({
-      ...prevValue, // Spread the previous state properly
-      [name]: inputValue, // Update the changed field
+      ...prevValue, // เก็บค่า input
+      [name]: inputValue,
     }));
   };
 
@@ -30,9 +31,7 @@ function Upload() {
     formData.append('location', value.location);
     formData.append('issue', value.issue);
     formData.append('details', value.details);
-
-    console.log('Success', value);
-
+ 
     axios.post('http://localhost:5000/api/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
@@ -40,15 +39,10 @@ function Upload() {
     })
     .then((response) => {
       console.log('Success', response.data);
+      alert("Success")
     })
     .catch((error) => {
-      if (error.response) {
-        console.log('Server Error', error.response.data);
-      } else if (error.request) {
-        console.log('Network Error', error.request);
-      } else {
-        console.log('Error', error.message);
-      }
+      console.log('Error', error.message);
     });
   };
 
@@ -58,12 +52,23 @@ function Upload() {
         <h1 className="font-inter mt-4 ml-[5vw] text-[4.5rem] font-bold text-[#340000] max-lg:text-[2rem] ">INFORMATION</h1>
         <form className="justify-center flex max-xl:grid max-xl:grid-cols-1" onSubmit={handleSubmit}>
           <div className="flex item-center justify-center w-full h-[50rem] max-xl:h-[30rem] max-lg:w-full ">
-            <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center bg-gray-100 h-auto w-full mx-5 mb-[2rem] mt-[3rem] border rounded-[35px] cursor-pointer hover:bg-gray-300 border-4 border-dashed border-red-600">
+            {/* กำหนดพื้นหลังเป็นภาพที่ผู้ใช้อัปโหลด */}
+            <label htmlFor="dropzone-file" 
+              className="flex flex-col items-center justify-center h-auto w-full mx-5 mb-[2rem] mt-[3rem] border rounded-[35px] cursor-pointer hover:bg-gray-300 border-4 border-dashed border-red-600"
+              style={{
+                backgroundImage: preview ? `url(${preview})` : 'none', // ตั้งพื้นหลังเป็นภาพที่อัปโหลด
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}>
               <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                <i className="fa-solid fa-cloud-arrow-up text-[5rem] text-red-400"></i>
-              </div>
-              <div className="text-lg flex">
-                <p>Click to upload image</p> <p className="text-red-400 ml-2 underline underline-offset-2">Here</p>
+                {!preview && (
+                  <>
+                    <i className="fa-solid fa-cloud-arrow-up text-[5rem] text-red-400"></i>
+                    <div className="text-lg flex">
+                      <p>Click to upload image</p> <p className="text-red-400 ml-2 underline underline-offset-2">Here</p>
+                    </div>
+                  </>
+                )}
               </div>
               <input id="dropzone-file" type="file" className="hidden" onChange={handleFileChange} />
             </label>
@@ -71,6 +76,7 @@ function Upload() {
 
           <div className="mt-[3rem] p-4 w-1/3 max-xl:w-full max-xl:mt-1">
             <div className="bg-gradient-to-b from-[#FF0000] to-[#FFD705] shadow-2xl item-center mx-5 mb-5 rounded-3xl p-4">
+              {/* ฟอร์มกรอกข้อมูล */}
               <div className="mb-5">
                 <label className="text-white block mb-2 text-lg font-medium">สถานที่</label>
                 <select name="location" onChange={handleInputChange} value={value.location} className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-lg w-full p-2.5" required>
