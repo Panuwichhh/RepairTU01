@@ -24,7 +24,7 @@ function Home() {
         </div>
         
         <div className="flex flex-col items-center">
-            <i class=" mb-20 text-[25vw] text-[#340000] fa-solid fa-screwdriver-wrench max-md:text-[20vw] "></i>
+            <i className=" mb-20 text-[25vw] text-[#340000] fa-solid fa-screwdriver-wrench max-md:text-[20vw] "></i>
             <button id="get_start" className="w-60 h-14 font-black bg-[#E20B0B] text-white rounded-3xl shadow-2xl mt-5 hover:opacity-80 hover:text-yellow-400"><Link to="/Upload">GET STARTED</Link></button>
         </div>
     </div>
