@@ -9,7 +9,7 @@ function Statuspage() {
   return (
     <>
     <Nav/>
-    <Statusremake/>
+    <Status/>
     <Footer/>
     </>
   )

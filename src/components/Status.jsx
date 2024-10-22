@@ -52,11 +52,6 @@ function Status() {
                         {isRepaired ? (
                             // แสดงรายการเมื่อสถานะเป็น "Repaired"
                             repairedItems.map((item, index) => (
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                <div key={index} className="flex p-10 bg-green-200 mb-2 shadow-md rounded-md">
-                                    <li>{item}</li>
-=======
                                 <div key={index} className="flex justify-between p-2 bg-white  shadow-2xl hover:shadow-gray-500 shadow-inner ">
                                     <div class="w-1/5   flex items-center justify-center">
                                         <div src="" alt="" class="w-10 h-10 bg-gray-400 rounded-full"></div>
@@ -73,21 +68,11 @@ function Status() {
                                     <div class="w-28 flex items-center justify-center ">
                                         <div id="status_color" class="w-5 h-5 bg-green-500 rounded-full"></div>
                                     </div>
->>>>>>> 2b118d013d5c6239764ac2611744532bc8100692
-=======
-                                <div key={index} className="flex p-5 bg-green-200 mb-2">
-                                    <li>{item}</li>
->>>>>>> parent of 2b118d0 (Update Status.jsx)
                                 </div>
                             ))
                         ) : (
                             // แสดงรายการเมื่อสถานะเป็น "Pending Repair"
                             pendingItems.map((item, index) => (
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                <div key={index} className="flex p-10 bg-red-200 mb-1 shadow-sm ">
-                                    <li>{item}</li>
-=======
                                 <div key={index} className="flex justify-between p-2 bg-white  shadow-2xl hover:shadow-gray-500 shadow-inner ">
                                     <div class="w-1/5   flex items-center justify-center">
                                         <div src="" alt="" class="w-10 h-10 bg-gray-400 rounded-full"></div>
@@ -105,11 +90,6 @@ function Status() {
                                         <div id="status_color" class="w-5 h-5 bg-red-500 rounded-full"></div>
                                     </div>
                                 
->>>>>>> 2b118d013d5c6239764ac2611744532bc8100692
-=======
-                                <div key={index} className="flex p-5 bg-red-200 mb-1 shadow-sm ">
-                                    <li>{item}</li>
->>>>>>> parent of 2b118d0 (Update Status.jsx)
                                 </div>
                             ))
                         )}
