@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Status() {
 
-    const repairedItems = ['บรรยายรวม 1','บรรยายรวม 2', 'ministadium', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'ministadium', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์'];
+    const repairedItems = ['บรรยายรวม 1', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์'];
     const pendingItems = ['พาณิชยศาตร์ และการบัญชี', 'ministadium', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์'];
     
     // สร้าง state เพื่อเก็บสถานะปัจจุบันของสวิตช์
@@ -18,10 +18,10 @@ function Status() {
     return (
         <>
             <div className="w-full  bg-[##F6F6F6] flex items-center indent-10">
-                <h1 className="font-bold text-5xl text-[#340000] my-10">STATUS</h1>
+                <h1 className="font-bold text-5xl text-[#340000] my-5">STATUS</h1>
             </div>
 
-            <div className="w-full h-[35rem]  bg-gradient-to-t from-[#FFD705] to-[#FF0000] rounded-t-[35px]">
+            <div className="w-full h-[50rem] bg-gradient-to-t from-[#FFD705] to-[#FF0000] rounded-t-[35px]">
 
                 <div className="w-[20%] h-[5%]"></div>
                 <div className="flex justify-between items-center">
@@ -31,13 +31,13 @@ function Status() {
 
                         onChange={handleToggle} // เรียกฟังก์ชันเมื่อมีการเปลี่ยนสถานะ
                             checked={!isRepaired} />
-                        <div className="relative w-72 h-14 ml-[7vw]  shadow-[0_10px_5px_-5px_rgba(0,0,0,0.3)]
-                     rounded-xl peer dark:bg-[#340000] 
+                        <div className="relative w-72 h-14 ml-20
+                     rounded-full peer dark:bg-[#340000] 
                     peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full
-                    after:absolute after:top-[4px] after:start-[6px] after:bg-[#FFD705] after:rounded-xl 
+                    after:absolute after:top-[4px] after:start-[6px] after:bg-[#FFD705] after:rounded-full 
                     after:h-12 after:w-[48%] after:transition-all peer-checked:bg-[#340000]">
-                            <div className="flex items-center justify-between h-full px-4 ">
-                                <span className="text-[#340000] font-semibold ml-5 z-10 ">REPAIRED</span>
+                            <div className="flex items-center justify-between h-full px-4">
+                                <span className="text-[#340000] font-semibold ml-5 z-10">REPAIRED</span>
                                 <span className="text-[#340000] font-semibold  z-10">PENDING REPAIR</span>
                             </div>
                         </div>
@@ -52,6 +52,7 @@ function Status() {
                         {isRepaired ? (
                             // แสดงรายการเมื่อสถานะเป็น "Repaired"
                             repairedItems.map((item, index) => (
+<<<<<<< HEAD
 <<<<<<< HEAD
                                 <div key={index} className="flex p-10 bg-green-200 mb-2 shadow-md rounded-md">
                                     <li>{item}</li>
@@ -73,11 +74,16 @@ function Status() {
                                         <div id="status_color" class="w-5 h-5 bg-green-500 rounded-full"></div>
                                     </div>
 >>>>>>> 2b118d013d5c6239764ac2611744532bc8100692
+=======
+                                <div key={index} className="flex p-5 bg-green-200 mb-2">
+                                    <li>{item}</li>
+>>>>>>> parent of 2b118d0 (Update Status.jsx)
                                 </div>
                             ))
                         ) : (
                             // แสดงรายการเมื่อสถานะเป็น "Pending Repair"
                             pendingItems.map((item, index) => (
+<<<<<<< HEAD
 <<<<<<< HEAD
                                 <div key={index} className="flex p-10 bg-red-200 mb-1 shadow-sm ">
                                     <li>{item}</li>
@@ -100,10 +106,11 @@ function Status() {
                                     </div>
                                 
 >>>>>>> 2b118d013d5c6239764ac2611744532bc8100692
+=======
+                                <div key={index} className="flex p-5 bg-red-200 mb-1 shadow-sm ">
+                                    <li>{item}</li>
+>>>>>>> parent of 2b118d0 (Update Status.jsx)
                                 </div>
-
-             
-                                
                             ))
                         )}
 
