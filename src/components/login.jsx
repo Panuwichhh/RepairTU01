@@ -29,6 +29,8 @@ function Login() {
                 console.log('Success', response.data);
                 alert('Success')
             })
+
+            // จับ error
             .catch((error) => {
                 if (error.response) {
                     console.log('Server Error', error.response.data);
