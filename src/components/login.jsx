@@ -5,8 +5,8 @@ function Login() {
 
     // เก็บข้อมูลผู้ใช้
     const [value, setValue] = useState({
-        StudentId: '',
-        Password: '',
+        studentId: '',
+        password: '',
     });
 
     //ตรวจจับ input
@@ -24,12 +24,11 @@ function Login() {
         event.preventDefault();
         console.log(value);
 
-        axios.post('http://localhost:5000/api/login', value)
+        axios.post('http://localhost:3000/api/login', value)
             .then((response) => {
                 console.log('Success', response.data);
-                localStorage.setItem('token', data.token);
-                alert('Success')
-                navigate('/home')
+                localStorage.setItem('token', response.data);
+                alert('เข้าสู่ระบบสำเร็จ!');
             })
 
             // จับ error
@@ -65,8 +64,8 @@ function Login() {
                             </label>
                             <input
                                 type='text'
-                                name='StudentId' 
-                                value={value.StudentId}
+                                name='studentId' 
+                                value={value.studentId}
                                 onChange={handleInputChange}
                                 className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-xl w-full p-2.5"
                                 required
@@ -78,8 +77,8 @@ function Login() {
                             </label>
                             <input
                                 type="password"
-                                name='Password' 
-                                value={value.Password}
+                                name='password' 
+                                value={value.password}
                                 onChange={handleInputChange}
                                 id="password" 
                                 className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-xl w-full p-2.5"
