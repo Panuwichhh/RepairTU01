@@ -27,7 +27,9 @@ function Login() {
         axios.post('http://localhost:5000/api/login', value)
             .then((response) => {
                 console.log('Success', response.data);
+                localStorage.setItem('token', data.token);
                 alert('Success')
+                navigate('/home')
             })
 
             // จับ error
