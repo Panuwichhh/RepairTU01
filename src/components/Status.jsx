@@ -1,10 +1,10 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 
 function Status() {
 
-    const repairedItems = ['บรรยายรวม 1','บรรยายรวม 2', 'ministadium', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'ministadium', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์'];
+    const repairedItems = ['บรรยายรวม 1', 'บรรยายรวม 2', 'ministadium', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'ministadium', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์'];
     const pendingItems = ['พาณิชยศาตร์ และการบัญชี', 'ministadium', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์'];
-    
+
     // สร้าง state เพื่อเก็บสถานะปัจจุบันของสวิตช์
     const [isRepaired, setIsRepaired] = useState(true);
 
@@ -22,13 +22,12 @@ function Status() {
 
             <div className="w-full h-[35rem]  bg-gradient-to-t from-[#FFD705] to-[#FF0000] rounded-t-[35px]">
 
-                <div className="w-[20%] h-[5%]"></div>
-                <div className="flex justify-between items-center">
+                <div className="bg-blue-400 bg-opacity-50 flex justify-between items-center pt-10 sm:px-20 md:px-12 xl:px-24 ">
                     <label className="inline-flex items-center cursor-pointer ">
-                        <input type="checkbox" id="toggleSwitch" className="sr-only peer" 
-                        onChange={handleToggle} // เรียกฟังก์ชันเมื่อมีการเปลี่ยนสถานะ
+                        <input type="checkbox" id="toggleSwitch" className="sr-only peer"
+                            onChange={handleToggle} // เรียกฟังก์ชันเมื่อมีการเปลี่ยนสถานะ
                             checked={!isRepaired} />
-                        <div className="relative w-72 h-14 ml-[7vw]  shadow-[0_10px_5px_-5px_rgba(0,0,0,0.3)]
+                        <div className="relative w-72 h-14  shadow-[0_10px_5px_-5px_rgba(0,0,0,0.3)]
                      rounded-xl peer dark:bg-[#340000] 
                     peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full
                     after:absolute after:top-[4px] after:start-[6px] after:bg-[#FFD705] after:rounded-xl 
@@ -40,8 +39,10 @@ function Status() {
                         </div>
                     </label>
 
-                    <button id="to_add_page" className="text-5xl  text-white mr-12 fa-solid fa-plus hover:opacity-80"></button>
+                    <button id="to_add_page" className="text-3xl md:text-5xl text-white fa-solid fa-plus hover:opacity-80"></button>
                 </div>
+
+
 
                 {/* <!-- Centering the gray box --> */}
                 <div className="flex justify-center items-center w-full h-[75%] mt-10">
@@ -86,11 +87,11 @@ function Status() {
                                     <div class="w-28 flex items-center justify-center ">
                                         <div id="status_color" class="w-5 h-5 bg-red-500 rounded-full"></div>
                                     </div>
-                                
+
                                 </div>
 
-             
-                                
+
+
                             ))
                         )}
 
