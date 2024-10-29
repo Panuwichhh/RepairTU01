@@ -22,25 +22,40 @@ function Status() {
 
             <div className="w-full h-[35rem]  bg-gradient-to-t from-[#FFD705] to-[#FF0000] rounded-t-[35px]">
 
-                <div className="bg-blue-400 bg-opacity-50 flex justify-between items-center pt-10 sm:px-20 md:px-12 xl:px-24 ">
-                    <label className="inline-flex items-center cursor-pointer ">
-                        <input type="checkbox" id="toggleSwitch" className="sr-only peer"
-                            onChange={handleToggle} // เรียกฟังก์ชันเมื่อมีการเปลี่ยนสถานะ
-                            checked={!isRepaired} />
-                        <div className="relative w-72 h-14  shadow-[0_10px_5px_-5px_rgba(0,0,0,0.3)]
-                     rounded-xl peer dark:bg-[#340000] 
-                    peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full
-                    after:absolute after:top-[4px] after:start-[6px] after:bg-[#FFD705] after:rounded-xl 
-                    after:h-12 after:w-[48%] after:transition-all peer-checked:bg-[#340000]">
-                            <div className="flex items-center justify-between h-full px-4 ">
-                                <span className="text-[#340000] font-semibold ml-5 z-10 ">REPAIRED</span>
-                                <span className="text-[#340000] font-semibold  z-10">PENDING REPAIR</span>
+                <div className="bg-blue-400 bg-opacity-50 flex justify-between items-center pt-10 px-5 md:px-12 xl:px-24">
+                    <label className="inline-flex items-center cursor-pointer">
+                        <input
+                            type="checkbox"
+                            id="toggleSwitch"
+                            className="sr-only peer"
+                            onChange={handleToggle}
+                            checked={!isRepaired}
+                        />
+                        <div
+                            className="relative w-48 h-10 sm:w-72 sm:h-14  shadow-[0_10px_5px_-5px_rgba(0,0,0,0.3)] 
+                 rounded-xl peer dark:bg-[#340000] 
+                 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full
+                 after:absolute after:top-[4px] after:start-[4px] sm:after:start-[6px] after:bg-[#FFD705] after:rounded-xl 
+                 after:h-8 sm:after:h-12 after:w-[48%] after:transition-all peer-checked:bg-[#340000]"
+                        >
+                            <div className="flex items-center justify-between h-full px-2 sm:px-4">
+                                <span className="text-[10px] sm:text-base  text-[#340000] font-semibold ml-5 z-10">
+                                    REPAIRED
+                                </span>
+                                <span className="text-[10px] sm:text-base   text-[#340000] font-semibold mr-1 sm:mr-0 z-10">
+                                    PENDING REPAIR
+                                </span>
+
                             </div>
                         </div>
                     </label>
 
-                    <button id="to_add_page" className="text-3xl md:text-5xl text-white fa-solid fa-plus hover:opacity-80"></button>
+                    <button
+                        id="to_add_page"
+                        className="text-3xl sm:text-4xl md:text-5xl  text-white fa-solid fa-plus hover:opacity-80"
+                    ></button>
                 </div>
+
 
 
 
@@ -56,7 +71,7 @@ function Status() {
                                     </div>
                                     <div class="w-full h-full">
                                         <div class=" w-full h-1/2 font-black text-[3vh] flex items-center ">
-                                            <p>{item}</p>
+                                            <p class="text-xs sm:text-xl">{item}</p>
                                             <p class="font-normal text-[15px] ml-10 ">Time 00:00</p>
                                         </div>
                                         <div class=" w-full h-1/2 text-gray-500 ">
