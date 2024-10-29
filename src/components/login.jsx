@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function Login() {
+
+    // เก็บข้อมูลผู้ใช้
     const [value, setValue] = useState({
-        StudentId: '',
-        Password: '',
+        studentId: '',
+        password: '',
     });
 
+    //ตรวจจับ input
     const handleInputChange = (event) => {
         const { name, value: inputValue } = event.target;
         setValue((prevValue) => ({
@@ -15,15 +18,20 @@ function Login() {
         }));
     };
 
+
+    // ส่งข้อมูลด้วย json ไปยัง api
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(value);
 
-        axios.post('http://localhost:5000/api/login', value)
+        axios.post('http://localhost:3000/api/login', value)
             .then((response) => {
                 console.log('Success', response.data);
-                alert('Success')
+                localStorage.setItem('token', response.data);
+                alert('เข้าสู่ระบบสำเร็จ!');
             })
+
+            // จับ error
             .catch((error) => {
                 if (error.response) {
                     console.log('Server Error', error.response.data);
@@ -42,7 +50,10 @@ function Login() {
                     <i className="text-[15vw] text-[#340000] fa-solid fa-screwdriver-wrench max-md:text-[20vw] "></i>
                     <p className="text-[#340000] font-bold text-[9vw] leading-none max-md:text-[15vw]">WELCOME</p>
                 </div>
+
                 <div className="item-center my-10 max-md:my-5 mx-5 ">
+
+
                     <form onSubmit={handleSubmit} className="p-5 bordershadow-sm rounded-2xl bg-gradient-to-b from-[#FF0000] to-[#FFD705] shadow-2xl mr-2">
                         <div>
                             <div className="text-[5rem] font-bold text-center text-white my-2">LOGIN</div>
@@ -53,8 +64,8 @@ function Login() {
                             </label>
                             <input
                                 type='text'
-                                name='StudentId' 
-                                value={value.StudentId}
+                                name='studentId' 
+                                value={value.studentId}
                                 onChange={handleInputChange}
                                 className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-xl w-full p-2.5"
                                 required
@@ -66,8 +77,8 @@ function Login() {
                             </label>
                             <input
                                 type="password"
-                                name='Password' 
-                                value={value.Password}
+                                name='password' 
+                                value={value.password}
                                 onChange={handleInputChange}
                                 id="password" 
                                 className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-xl w-full p-2.5"
@@ -83,6 +94,9 @@ function Login() {
                             </button>
                         </div>
                     </form>
+
+
+
                 </div>
             </div>
         </>
