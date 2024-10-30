@@ -17,12 +17,12 @@ function Status() {
     return (
         <>
             <div className="w-full  bg-[##F6F6F6] flex items-center indent-10">
-                <h1 className="font-bold text-5xl text-[#340000] my-10">STATUS</h1>
+                <h1 className="font-bold text-4xl sm:text-5xl text-[#340000] my-10">STATUS</h1>
             </div>
 
             <div className="w-full h-[35rem]  bg-gradient-to-t from-[#FFD705] to-[#FF0000] rounded-t-[35px]">
 
-                <div className="bg-blue-400 bg-opacity-50 flex justify-between items-center pt-10 px-5 md:px-12 xl:px-24">
+                <div className="flex justify-between items-center pt-10 px-5 md:px-12 xl:px-24">
                     <label className="inline-flex items-center cursor-pointer">
                         <input
                             type="checkbox"
@@ -67,19 +67,19 @@ function Status() {
                             repairedItems.map((item, index) => (
                                 <div key={index} className="flex justify-between p-2 bg-white  shadow-2xl hover:shadow-gray-500 shadow-inner ">
                                     <div class="w-1/5   flex items-center justify-center">
-                                        <div src="" alt="" class="w-10 h-10 bg-gray-400 rounded-full"></div>
+                                        <div src="" alt="" class="w-7 h-7 sm:w-10 sm:h-10 bg-gray-400 rounded-full"></div>
                                     </div>
-                                    <div class="w-full h-full">
-                                        <div class=" w-full h-1/2 font-black text-[3vh] flex items-center ">
-                                            <p class="text-xs sm:text-xl">{item}</p>
-                                            <p class="font-normal text-[15px] ml-10 ">Time 00:00</p>
+                                    <div class="w-full h-full ml-2">
+                                        <div class=" w-full h-1/2  font-black flex items-center justify-between">
+                                            <p class="text-[10px] sm:text-xl">{item}</p>
+                                            <p class="font-normal text-[10px] sm:text-xl ml-10 ">Time 00:00</p>
                                         </div>
-                                        <div class=" w-full h-1/2 text-gray-500 ">
+                                        <div class=" text-[9px] sm:text-lg w-full h-1/2  text-gray-500 ">
                                             name
                                         </div>
                                     </div>
-                                    <div class="w-28 flex items-center justify-center ">
-                                        <div id="status_color" class="w-5 h-5 bg-green-500 rounded-full"></div>
+                                    <div class="w-20 flex items-center justify-center ">
+                                        <div id="status_color" class="w-3 h-3 sm:w-5 sm:h-5 bg-green-500 rounded-full"></div>
                                     </div>
                                 </div>
                             ))
@@ -88,23 +88,21 @@ function Status() {
                             pendingItems.map((item, index) => (
                                 <div key={index} className="flex justify-between p-2 bg-white  shadow-2xl hover:shadow-gray-500 shadow-inner ">
                                     <div class="w-1/5   flex items-center justify-center">
-                                        <div src="" alt="" class="w-10 h-10 bg-gray-400 rounded-full"></div>
+                                        <div src="" alt="" class="w-7 h-7 sm:w-10 sm:h-10 bg-gray-400 rounded-full"></div>
                                     </div>
-                                    <div class="w-full h-full">
-                                        <div class=" w-full h-1/2 font-black text-[3vh] flex items-center ">
-                                            <p>{item}</p>
-                                            <p class="font-normal text-[15px] ml-10 ">Time 00:00</p>
+                                    <div class="w-full h-full ml-2">
+                                        <div class=" w-full h-1/2  font-black flex items-center justify-between">
+                                            <p class="text-[10px] sm:text-xl">{item}</p>
+                                            <p class="font-normal text-[10px] sm:text-xl ml-10 ">Time 00:00</p>
                                         </div>
-                                        <div class=" w-full h-1/2 text-gray-500 ">
+                                        <div class=" text-[9px] sm:text-lg w-full h-1/2  text-gray-500 ">
                                             name
                                         </div>
                                     </div>
-                                    <div class="w-28 flex items-center justify-center ">
-                                        <div id="status_color" class="w-5 h-5 bg-red-500 rounded-full"></div>
+                                    <div class="w-20 flex items-center justify-center ">
+                                        <div id="status_color" class="w-3 h-3 sm:w-5 sm:h-5 bg-red-500 rounded-full"></div>
                                     </div>
-
                                 </div>
-
 
 
                             ))
