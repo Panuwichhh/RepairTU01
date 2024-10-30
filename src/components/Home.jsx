@@ -8,17 +8,17 @@ function Home() {
         <div className="">
             <div className="text-[#340000] ml-5 ">
                 <p className="font-bold text-[10vw] text-center  leading-none mb-10">WELCOME</p>
-                <p className="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Error quaerat saepe consequatur esse excepturi unde?</p>
-                <p className="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Error quaerat saepe consequatur esse excepturi unde?</p>
+                <p className="intro">Welcome to Repair TU System!
+                Streamline your maintenance requests with ease. Upload a photo, provide necessary details, 
+                and stay updated on the status of your report. Our goal is to ensure quick, efficient, 
+                and transparent repair services to keep your facilities in top condition."</p>
 
                 
             <div className="text-[#340000] mt-10">
                 <h1 className="font-bold text-2xl ">How to use</h1>
-                <p className="intro">1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, libero!</p>
-                <p className="intro">2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, molestiae.</p>
-                <p className="intro">3. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, dolorum.</p>
+                <p className="intro">1. Upload picture</p>
+                <p className="intro">2. Fill in the information</p>
+                <p className="intro">3. Submit the information and check the status</p>
             </div>
             </div>
         </div>

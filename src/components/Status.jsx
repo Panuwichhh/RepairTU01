@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Status() {
 
@@ -17,7 +18,7 @@ function Status() {
     return (
         <>
             <div className="w-full  bg-[##F6F6F6] flex items-center indent-10">
-                <h1 className="font-bold text-4xl sm:text-5xl text-[#340000] my-10">STATUS</h1>
+                <h1 className="font-bold text-4xl sm:text-5xl text-[#340000] my-5 sm:my-10">STATUS</h1>
             </div>
 
             <div className="w-full h-[35rem]  bg-gradient-to-t from-[#FFD705] to-[#FF0000] rounded-t-[35px]">
@@ -49,11 +50,8 @@ function Status() {
                             </div>
                         </div>
                     </label>
-
-                    <button
-                        id="to_add_page"
-                        className="text-3xl sm:text-4xl md:text-5xl  text-white fa-solid fa-plus hover:opacity-80"
-                    ></button>
+                    <Link to="/Upload"> <button id="to_add_page" className="text-3xl sm:text-4xl md:text-5xl  text-white fa-solid fa-plus hover:opacity-80"></button> </Link>
+                    
                 </div>
 
 
