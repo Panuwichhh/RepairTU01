@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function Status() {
+function StatusAdmin() {
 
     const repairedItems = ['บรรยายรวม 1', 'บรรยายรวม', 'ministadium', 'บรรยายรวม', 'วิศวกรรมศาสตร์', 'ministadium', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์'];
     const pendingItems = ['พาณิชยศาตร์ และการบัญชี', 'ministadium', 'บรรยายรวม', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์', 'บรรยายรวม 2', 'วิศวกรรมศาสตร์'];
@@ -117,4 +117,4 @@ function Status() {
     )
 }
 
-export default Status
+export default StatusAdmin
