@@ -97,6 +97,9 @@ function Status() {
                                             name
                                         </div>
                                     </div>
+                                    <div class="w-20 flex justify-center items-center">
+                                        <button class="text-[10px] sm:text-xl w-8 h-3/5 sm:w-10 sm:h-4/5 bg-red-500 rounded-md shadow-lg text-white hover:opacity-80">Edit</button>
+                                    </div>
                                     <div class="w-20 flex items-center justify-center ">
                                         <div id="status_color" class="w-3 h-3 sm:w-5 sm:h-5 bg-red-500 rounded-full"></div>
                                     </div>
