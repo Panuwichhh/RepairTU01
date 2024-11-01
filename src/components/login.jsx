@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 function Login() {
 
@@ -9,9 +8,6 @@ function Login() {
         studentId: '',
         password: '',
     });
-    
-    // ใช้ useNavigate สำหรับการเปลี่ยนหน้า
-    const navigate = useNavigate();
 
     //ตรวจจับ input
     const handleInputChange = (event) => {
@@ -33,10 +29,7 @@ function Login() {
                 console.log('Success', response.data);
                 localStorage.setItem('token', response.data);
                 alert('เข้าสู่ระบบสำเร็จ!');
-                // เปลี่ยนหน้าไปที่หน้า Home หลังจากเข้าสู่ระบบสำเร็จ
-                navigate('/Home'); // ใช้ navigate ไปยังหน้า Home
             })
-
 
             // จับ error
             .catch((error) => {

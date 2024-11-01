@@ -32,7 +32,7 @@ function Upload() {
     formData.append('issue', value.issue);
     formData.append('details', value.details);
  
-    axios.post('http://localhost:3000/api/upload', formData, {
+    axios.post('http://localhost:5000/api/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
