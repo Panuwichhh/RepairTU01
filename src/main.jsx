@@ -16,6 +16,8 @@ import Infopage from './pages/Infopage.jsx';
 import InforDonepage from './pages/InforDonePage.jsx';
 import Homepage from './pages/homepage.jsx';
 import Statuspage from './pages/Statuspage.jsx';
+import Uploadadminpage from './pages/adminpage/uploadadminpage.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "Status",
     element: <Statuspage/>
+  },
+  {
+    path: "Uploadadmin",
+    element: <Uploadadminpage/>
   },
 ]);
 
