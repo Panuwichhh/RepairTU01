@@ -1,16 +1,16 @@
 import React from 'react'
 import Nav from '../components/Nav'
+import InforDone from '../components/inforDone'
 import Footer from '../components/Footer'
-import Home from '../components/Home'
 
-function Homepage() {
+function InforDonepage() {
   return (
     <>
     <Nav/>
-    <Home/>
+    <InforDone/>
     <Footer/>
     </>
   )
 }
 
-export default Homepage
+export default InforDonepage

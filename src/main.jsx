@@ -13,6 +13,7 @@ import './index.css';
 import Uploadpage from './pages/Uploadpage.jsx';
 import Loginpge from './pages/Loginpage.jsx';
 import Infopage from './pages/Infopage.jsx';
+import InforDonepage from './pages/InforDonePage.jsx';
 import Homepage from './pages/homepage.jsx';
 import Statuspage from './pages/Statuspage.jsx';
 
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "Infomation",
     element: <Infopage/>
+  },
+  {
+    path: "InforDone",
+    element: <InforDonepage/>
   },
   {
     path: "Home",

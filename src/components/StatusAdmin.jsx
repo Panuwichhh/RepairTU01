@@ -51,7 +51,7 @@ function StatusAdmin() {
                         </div>
                     </label>
                     {/* ปุ่มไปยังหนัา  Upload */}
-                    <Link to="/Upload"> <button id="to_add_page" className="text-3xl sm:text-4xl md:text-5xl  text-white fa-solid fa-plus hover:opacity-80"></button> </Link>
+                    <button id="to_add_page" className="text-3xl sm:text-4xl md:text-5xl  text-white fa-solid fa-plus hover:opacity-80"></button>
 
                 </div>
 

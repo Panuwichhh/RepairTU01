@@ -64,7 +64,7 @@ function Status() {
                         {isRepaired ? (
                             // แสดงรายการเมื่อสถานะเป็น "Repaired"
                             repairedItems.map((item, index) => (
-                                <Link to="/infomation"> <div key={index} className="flex justify-between p-2 bg-white  hover:shadow-gray-500 shadow-inner ">
+                                <Link to="/inforDone"> <div key={index} className="flex justify-between p-2 bg-white  hover:shadow-gray-500 shadow-inner ">
                                     <div class="w-1/5   flex items-center justify-center">
                                         {/* ใส่รูปภาพ */}
                                         <img src="" alt="" class="w-7 h-7 sm:w-10 sm:h-10 bg-gray-400 rounded-full"/>
@@ -89,7 +89,7 @@ function Status() {
                         ) : (
                             // แสดงรายการเมื่อสถานะเป็น "Pending Repair"
                             pendingItems.map((item, index) => (
-                                <div key={index} className="flex justify-between p-2 bg-white  hover:shadow-gray-500 shadow-inner ">
+                                <Link to="/infomation"><div key={index} className="flex justify-between p-2 bg-white  hover:shadow-gray-500 shadow-inner ">
                                     <div class="w-1/5   flex items-center justify-center">
                                         {/* ใส่รูปภาพ */}
                                         <img src="" alt="" class="w-7 h-7 sm:w-10 sm:h-10 bg-gray-400 rounded-full"/>                                    </div>
@@ -108,7 +108,7 @@ function Status() {
                                     <div class="w-20 flex items-center justify-center ">
                                         <div id="status_color" class="w-3 h-3 sm:w-5 sm:h-5 bg-red-500 rounded-full"></div>
                                     </div>
-                                </div>
+                                </div></Link>
 
 
                             ))

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Items1 = ['ต้องการซ่อมตึก'];
 const Items2 = ['ตึกได้ซ่อมเรียบร้อยแล้ว'];
 
-function Info() {
+function InforDone() {
     return (
         <>
             <div className='flex flex-col md:flex-row flex-wrap bg-[#F6F6F6]'>
@@ -23,7 +23,7 @@ function Info() {
                 <div className='w-full md:w-1/2'>
                     {Items1.map((item1, index) => (
                         <div key={index} className="w-full flex flex-col items-center">
-                            <div className="flex flex-col items-start w-9/12  m-2 mx-auto">
+                            <div className="flex flex-col items-start w-9/12  m-5 mx-auto">
                                 {/* ใส่ชื่อสถานที่ */}
                                 <h1 className="font-bold text-4xl lg:text-6xl text-[#340000] text-left w-full indent-5">LOCATION</h1>
                                 {/* ใส่เวลาที่รับแจ้ง */}
@@ -47,7 +47,7 @@ function Info() {
                             ))}
 
                             {/* ปุ่มกลับมาหน้า Status */}
-                            <Link to="/StatusAdmin"><button className="w-32 h-10  bg-[#E20B0B] text-white rounded-3xl mb-5 hover:opacity-80 hover:text-yellow-400 shadow-lg shadow-black/35">
+                            <Link to="/Status"><button className="w-32 h-10  bg-[#E20B0B] text-white rounded-3xl mb-5 hover:opacity-80 hover:text-yellow-400 shadow-lg shadow-black/35">
                                 Back
                             </button></Link>
 
@@ -61,6 +61,6 @@ function Info() {
     );
 }
 
-export default Info;
+export default InforDone;
 
 
