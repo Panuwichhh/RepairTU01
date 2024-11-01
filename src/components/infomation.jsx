@@ -30,7 +30,7 @@ function Info() {
                             </textarea>
 
 
-                           
+                           {/* ปุ่มกลับมาหน้า Status */}
                             <Link to="/Status"><button className="w-32 h-10  bg-[#E20B0B] text-white rounded-3xl mb-5 hover:opacity-80 hover:text-yellow-400 shadow-lg shadow-black/35">
                                 Back
                             </button></Link>
