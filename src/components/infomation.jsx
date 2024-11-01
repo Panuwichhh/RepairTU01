@@ -1,28 +1,50 @@
-function Info() {
+import React from 'react';
+import { Link } from 'react-router-dom'
 
+const Items1 = ['ต้องการซ่อมตึก'];
+
+function Info() {
     return (
         <>
-            <div className="flex col-2 ">
-                <div className="w-1/2 w-full h-full ">
-                    <div className="flex flex-col items-center justify-center text-center justify-center place-content-center h-screen p-3 bg-gradient-to-l from-[#FF0000] to-[#FFD705] rounded-tr-[7rem] rounded-br-[7rem] ">
-                        <img className="w-[50em] h-[40rem] bg-gray-400 my-10 mx-10" src="https://cdn3.iconfinder.com/data/icons/school-169/64/46-Male_Student-512.png" alt="" />
+            <div className='w-full flex flex-col md:flex-row flex-wrap bg-[#F6F6F6]'>
+
+                <div className="w-full h-[25rem] sm:h-[35rem]  md:w-1/2 flex flex-col justify-center items-center bg-gradient-to-l from-[#FF0000] to-[#FFD705] rounded-tr-[2rem] rounded-br-[2rem] ">
+                    <div  className="w-8/12  sm:w-9/12 h-56 sm:h-80 lg:h-[360px] shadow-[2px_2px_5px_rgba(0,0,0,0.5)] bg-[#340000] rounded-3xl m-5  flex justify-center items-center">
+                        {/* ใส่รูปภาพ */}
+                        <img src="" alt="" className='w-[95%] h-[95%]  rounded-3xl'/>
                     </div>
                 </div>
-                <div className="w-1/2  w-full">
-                    <p className="text-[5rem] ml-5">LOCATION</p>
-                    <div className="flex flex-col items-center">
-                        <div className="p-10  h-1/2 mx-5 mt-5 shadow-lg rounded-2xl bg-gray-200">\
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque iure ex impedit nesciunt natus! Porro assumenda exercitationem dignissimos ex dolorem molestiae odit saepe, quos placeat laborum consectetur provident et id aspernatur, ut autem vitae iure quod, tempora natus? Qui quaerat ipsum quod placeat minus commodi, eum consequuntur porro asperiores, dolorem quis itaque voluptatem veritatis sed magnam dignissimos fugiat harum dolor ad rem sit vitae suscipit. Molestias maiores delectus ratione doloremque iste vel cum? Aperiam, debitis dicta tempora, itaque rerum non saepe, vel architecto nostrum ducimus nesciunt error animi? Ducimus, natus quas doloribus qui error distinctio atque eos accusamus deserunt impedit. Dolorum atque at explicabo molestias magnam. Placeat numquam, fugit quo, minus quos magnam deleniti culpa libero maxime voluptatem natus qui deserunt, unde atque voluptatibus quibusdam totam delectus consectetur reiciendis. Sunt sit asperiores accusantium dignissimos vel nesciunt dolores est voluptate nulla tempora? Quo, est distinctio id impedit alias quis magni? Eum, omnis ipsum. Officiis architecto, id, provident ut maxime dolorum nobis eveniet reprehenderit, quisquam soluta ducimus odio. Doloremque eveniet vel nostrum. Molestiae, similique placeat soluta tempore excepturi quod odio doloremque! Laborum, at amet eum id nesciunt porro, odit autem cumque nemo non asperiores quo dignissimos odio sint quod maiores fugiat recusandae?
+
+                <div className='w-full h-[25rem]  sm:h-[35rem] md:w-1/2  flex justify-center items-center'>
+                    {Items1.map((item1, index) => (
+                        <div key={index} className="w-full flex flex-col items-center">
+                            <div className="flex flex-col items-start w-9/12  m-2 mx-auto">
+                                {/* ใส่ชื่อสถานที่ */}
+                                <h1 className="font-bold text-4xl lg:text-6xl text-[#340000] text-left w-full indent-5">LOCATION</h1>
+                                {/* ใส่เวลาที่รับแจ้ง */}
+                                <p className="text-left w-full indent-5">Time 00:00</p>
+                            </div>
+                            <textarea name="Detail2" className="w-9/12  h-56 sm:h-72 bg-white shadow-[2px_2px_5px_rgba(0,0,0,0.5)] rounded-3xl mb-5 indent-5 p-3 outline-none overflow-y-auto" readOnly>
+                                {/* ใส่รายละเอียด */}
+                                {item1}
+                            </textarea>
+
+
+                           
+                            <Link to="/Status"><button className="w-32 h-10  bg-[#E20B0B] text-white rounded-3xl mb-5 hover:opacity-80 hover:text-yellow-400 shadow-lg shadow-black/35">
+                                Back
+                            </button></Link>
+
+
                         </div>
-                        <button className=" shadow-lg bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-10 mt-10 rounded" type="button">
-                            Next
-                        </button>
-                    </div>
+
+                    ))}
                 </div>
             </div>
         </>
-    )
-
+    );
 }
 
-export default Info
+export default Info;
+
+

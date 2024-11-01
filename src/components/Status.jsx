@@ -48,6 +48,7 @@ function Status() {
                                 </span>
 
                             </div>
+                            
                         </div>
                     </label>
                     <Link to="/Upload"> <button id="to_add_page" className="text-3xl sm:text-4xl md:text-5xl  text-white fa-solid fa-plus hover:opacity-80"></button> </Link>
@@ -63,15 +64,19 @@ function Status() {
                         {isRepaired ? (
                             // แสดงรายการเมื่อสถานะเป็น "Repaired"
                             repairedItems.map((item, index) => (
-                                <Link to="/infomation"> <div key={index} className="flex justify-between p-2 bg-white  shadow-2xl hover:shadow-gray-500 shadow-inner ">
+                                <Link to="/infomation"> <div key={index} className="flex justify-between p-2 bg-white  hover:shadow-gray-500 shadow-inner ">
                                     <div class="w-1/5   flex items-center justify-center">
-                                        <div src="" alt="" class="w-7 h-7 sm:w-10 sm:h-10 bg-gray-400 rounded-full"></div>
+                                        {/* ใส่รูปภาพ */}
+                                        <img src="" alt="" class="w-7 h-7 sm:w-10 sm:h-10 bg-gray-400 rounded-full"/>
                                     </div>
                                     <div class="w-full h-full ml-2">
                                         <div class=" w-full h-1/2  font-black flex items-center justify-between">
+                                            {/* ใส่ชื่อสถานที่ */}
                                             <p class="text-[10px] sm:text-xl">{item}</p>
+                                            {/* ใส่เวลา */}
                                             <p class="font-normal text-[10px] sm:text-xl ml-10 ">Time 00:00</p>
                                         </div>
+                                            {/* ใส่ชื่อผู้ส่ง */}
                                         <div class=" text-[9px] sm:text-lg w-full h-1/2  text-gray-500 ">
                                             name
                                         </div>
@@ -84,15 +89,18 @@ function Status() {
                         ) : (
                             // แสดงรายการเมื่อสถานะเป็น "Pending Repair"
                             pendingItems.map((item, index) => (
-                                <div key={index} className="flex justify-between p-2 bg-white  shadow-2xl hover:shadow-gray-500 shadow-inner ">
+                                <div key={index} className="flex justify-between p-2 bg-white  hover:shadow-gray-500 shadow-inner ">
                                     <div class="w-1/5   flex items-center justify-center">
-                                        <div src="" alt="" class="w-7 h-7 sm:w-10 sm:h-10 bg-gray-400 rounded-full"></div>
-                                    </div>
+                                        {/* ใส่รูปภาพ */}
+                                        <img src="" alt="" class="w-7 h-7 sm:w-10 sm:h-10 bg-gray-400 rounded-full"/>                                    </div>
                                     <div class="w-full h-full ml-2 ">
                                         <div class=" w-full h-1/2  font-black flex items-center justify-between">
+                                            {/* ใส่ชื่อสถานที่ */}
                                             <p class="text-[10px] sm:text-xl">{item}</p>
+                                            {/* ใส่เวลา */}
                                             <p class="font-normal text-[10px] sm:text-xl ml-10 ">Time 00:00</p>
                                         </div>
+                                        {/* ใส่ชื่อผู้ส่ง */}
                                         <div class=" text-[9px] sm:text-lg w-full h-1/2  text-gray-500 ">
                                             name
                                         </div>
