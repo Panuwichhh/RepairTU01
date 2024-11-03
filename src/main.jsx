@@ -21,7 +21,7 @@ import Uploadadminpage from './pages/adminpage/uploadadminpage.jsx';
 
 
 const router = createBrowserRouter([
-  { path: "/", element: <Loginpge /> },
+  { path: "/RepairTU01/", element: <Loginpge /> },
   { path: "Upload", element: <Uploadpage /> },
   { path: "Infomation", element: <Infopage /> },
   { path: "InforDone", element: <InforDonepage /> },
