@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom'
 function Home() {
     return (
         <>
-
-            <div className="w-full  flex flex-col items-center justify-center  lg:flex-row bg-[#F6F6F6]">
+            <div className="w-full flex flex-col items-center justify-center  lg:flex-row bg-[#F6F6F6]">
 
                 <div className="w-full flex flex-col items-center justify-center lg:flex-row bg-[#F6F6F6]">
 
