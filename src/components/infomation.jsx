@@ -6,16 +6,16 @@ const Items1 = ['ต้องการซ่อมตึก'];
 function Info() {
     return (
         <>
-            <div className='w-full flex flex-col md:flex-row flex-wrap bg-[#F6F6F6]'>
+            <div className='w-full flex flex-col md:flex-row flex-wrap justify-center items-center bg-[#F6F6F6]'>
 
-                <div className="w-full h-[25rem] sm:h-[41rem]  md:w-1/2 flex flex-col justify-center items-center bg-gradient-to-l from-[#FF0000] to-[#FFD705] rounded-tr-[2rem] rounded-br-[2rem] ">
+                <div className="w-full h-[25rem] sm:h-[41rem]  lg:h-screen md:w-1/2 flex justify-center items-center bg-gradient-to-l from-[#FF0000] to-[#FFD705] rounded-tr-[2rem] rounded-br-[2rem] ">
                     <div  className="w-8/12  sm:w-9/12 h-56 sm:h-80 lg:h-[360px] shadow-[2px_2px_5px_rgba(0,0,0,0.5)] bg-[#340000] rounded-3xl m-5  flex justify-center items-center">
                         {/* ใส่รูปภาพ */}
                         <img src="" alt="" className='w-[95%] h-[95%]  rounded-3xl'/>
                     </div>
                 </div>
 
-                <div className='w-full h-[25rem]  sm:h-[35rem] md:w-1/2  flex justify-center items-center mt-10'>
+                <div className='w-full md:w-1/2 h-[25rem] sm:h-[35rem] flex justify-center items-center mt-10'>
                     {Items1.map((item1, index) => (
                         <div key={index} className="w-full flex flex-col items-center">
                             <div className="flex flex-col items-start w-9/12  m-2 mx-auto">
@@ -31,7 +31,7 @@ function Info() {
 
 
                            {/* ปุ่มกลับมาหน้า Status */}
-                            <Link to="/Status"><button className="w-32 h-10  bg-[#E20B0B] text-white rounded-3xl m-10 hover:opacity-80 hover:text-yellow-400 shadow-lg shadow-black/35">
+                            <Link to="/Status"><button className="w-32 h-10  bg-[#E20B0B] text-white rounded-3xl hover:opacity-80 hover:text-yellow-400 shadow-lg shadow-black/35">
                                 Back
                             </button></Link>
 
