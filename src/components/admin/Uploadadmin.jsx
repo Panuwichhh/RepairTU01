@@ -4,7 +4,6 @@ import axios from 'axios';
 function Uploadadmin() {
   const [file, setFile] = useState(null); // เก็บไฟล์ที่ผู้ใช้อัปโหลด
   const [value, setValue] = useState({
-    location: '',
     major: '',
     details: '',
   });
