@@ -17,11 +17,12 @@ function StatusAdmin() {
 
     return (
         <>
+        <div className="h-screen">
             <div className="w-full  bg-[##F6F6F6] flex items-center indent-10">
                 <h1 className="font-bold text-4xl sm:text-5xl text-[#340000] my-5 sm:my-10">STATUS</h1>
             </div>
 
-            <div className="w-full h-[35rem]  bg-gradient-to-t from-[#FFD705] to-[#FF0000] rounded-t-[35px]">
+            <div className="w-full h-screen bg-gradient-to-t from-[#FFD705] to-[#FF0000] rounded-t-[35px]">
 
                 <div className="flex justify-between items-center pt-10 px-5 md:px-12 xl:px-24">
                     <label className="inline-flex items-center cursor-pointer">
@@ -121,6 +122,7 @@ function StatusAdmin() {
                     </div>
                 </div>
 
+            </div>
             </div>
         </>
     )
