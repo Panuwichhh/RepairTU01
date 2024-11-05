@@ -5,14 +5,14 @@ function Home() {
     return (
         <>
 
-            <div className="w-full h-screen flex flex-col items-center justify-center  lg:flex-row bg-[#F6F6F6]">
+            <div className="w-full min-h-screen flex flex-col items-center justify-center  lg:flex-row bg-[#F6F6F6]">
 
                 <div className="w-full flex flex-col items-center justify-center lg:flex-row bg-[#F6F6F6]">
 
                     <div className="w-full ">
                         <div className="text-[#340000] mt-10 flex flex-col justify-center items-center">
                             <p className="font-bold text-6xl md:text-[100px] lg:text-[120px] xl:text-[175px] m-5">WELCOME</p>
-                            <p className="w-[80%] h-4/5 text-xs md:text-xl indent-5 my-5">
+                            <p className="w-[80%] h-4/5 text-xs sm:text-xl indent-5 my-5">
                                 Welcome to Repair TU System!
                                 Streamline your maintenance requests with ease. Upload a photo, provide necessary details,
                                 and stay updated on the status of your report. Our goal is to ensure quick, efficient,
