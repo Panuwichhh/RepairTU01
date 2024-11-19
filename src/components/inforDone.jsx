@@ -25,7 +25,7 @@ function InforDone() {
                         <div key={index} className="w-full flex flex-col items-center">
                             <div className="flex flex-col items-start w-9/12  m-5 mx-auto">
                                 {/* ใส่ชื่อสถานที่ */}
-                                <h1 className="font-bold text-4xl lg:text-6xl text-[#340000] text-left w-full indent-5">LOCATION</h1>
+                                <h1 className="font-bold text-4xl lg:text-6xl text-[#340000] text-left w-full indent-5 p-10">LOCATION</h1>
                                 {/* ใส่เวลาที่รับแจ้ง */}
                                 <p className="text-left w-full indent-5">Time 00:00</p>
                             </div>

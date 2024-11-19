@@ -72,9 +72,9 @@ function Status() {
                                         <div class="w-full h-full ml-2">
                                             <div class=" w-full h-1/2  font-black flex items-center justify-between">
                                                 {/* ใส่ชื่อสถานที่ */}
-                                                <p class="text-[10px] sm:text-xl">{item}</p>
+                                                <p class="text-xs sm:text-xl">{item}</p>
                                                 {/* ใส่เวลา */}
-                                                <p class="font-normal text-[10px] sm:text-xl ml-10 ">Time 00:00</p>
+                                                <p class="font-normal text-[8px] sm:text-xl ml-10 ">Time 00:00</p>
                                             </div>
                                             {/* ใส่ชื่อผู้ส่ง */}
                                             <div class=" text-[9px] sm:text-lg w-full h-1/2  text-gray-500 ">
@@ -96,9 +96,9 @@ function Status() {
                                         <div class="w-full h-full ml-2 ">
                                             <div class=" w-full h-1/2  font-black flex items-center justify-between">
                                                 {/* ใส่ชื่อสถานที่ */}
-                                                <p class="text-[10px] sm:text-xl">{item}</p>
+                                                <p class="text-xs sm:text-xl">{item}</p>
                                                 {/* ใส่เวลา */}
-                                                <p class="font-normal text-[10px] sm:text-xl ml-10 ">Time 00:00</p>
+                                                <p class="font-normal text-[8px] sm:text-xl ml-10 ">Time 00:00</p>
                                             </div>
                                             {/* ใส่ชื่อผู้ส่ง */}
                                             <div class=" text-[9px] sm:text-lg w-full h-1/2  text-gray-500 ">
