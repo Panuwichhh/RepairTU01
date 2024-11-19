@@ -39,7 +39,7 @@ function Login() {
                     setIsFading(true);
                     setTimeout(() => {
                         window.location.href = '/Home'; // Redirect to Home after fading
-                    }, 600);
+                    }, 950);
                 }, 2000);
             })
             .catch((error) => {
