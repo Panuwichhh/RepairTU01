@@ -116,7 +116,7 @@ const navigate = useNavigate();
               </div>
               <div className="mb-5">
                 <label className="block mb-2 text-lg font-medium text-white">รายละเอียดเพิ่มเติม</label>
-                <textarea name="details" onChange={handleInputChange} value={value.details} className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-lg w-full p-2.5 h-64" placeholder="ใส่รายละเอียด สถานที่ ตำแหน่งของ สิ่งที่ต้องการแก้ไข"></textarea>
+                <textarea name="details" onChange={handleInputChange} value={value.details} className="shadow-sm bg-white border border-gray-300 text-gray-900 rounded-lg w-full p-2.5 h-64" placeholder="ใส่รายละเอียดเพิ่มเติม ตำแหน่งของสิ่งที่ค้องการแก้ไข"></textarea>
               </div>
               <div className="mb-5 text-center">
                 <button className="hover:scale-110  duration-500 shadow bg-red-500 text-white hover:bg-red-400 font-bold py-2 px-4 rounded" type="submit">
